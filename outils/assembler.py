@@ -54,12 +54,13 @@ os.makedirs(os.path.join(RACINE, 'numeros'), exist_ok=True)
 open(os.path.join(RACINE, 'numeros', f'{iso}.html'), 'w', encoding='utf-8').write(page)
 
 # Page d'accueil : tous les numéros, du plus récent au plus ancien
+ESSAIS = {'2026-09-29.html': "Numéro d'essai", '2026-09-30.html': 'Essai du robot'}
 accueil = open(os.path.join(RACINE, 'index.html'), encoding='utf-8').read()
 lignes = []
 for f in sorted(os.listdir(os.path.join(RACINE, 'numeros')), reverse=True):
     if re.fullmatch(r'\d{4}-\d{2}-\d{2}\.html', f):
         y, mo, d = f[:10].split('-')
-        note = "Numéro d'essai" if f == '2026-09-29.html' else 'Lire'
+        note = ESSAIS.get(f, 'Lire')
         lignes.append(f'    <li><a href="numeros/{f}"><span class="titre">Newsletter {d}/{mo}/{y}</span>'
                       f'<span class="note">{note} <span class="fleche">→</span></span></a></li>')
 accueil = re.sub(r'(<ul>\n).*?(\n  </ul>)', lambda x: x.group(1) + '\n'.join(lignes) + x.group(2), accueil, count=1, flags=re.S)

@@ -8,16 +8,23 @@ Tu écris un numéro de la newsletter **Content AI Influence**, une veille hebdo
 |---|---|
 | `format.md` | **La recette** : quoi chercher, comment choisir, comment écrire, quoi vérifier. Elle fait foi. |
 | `sources.md` | Les sources autorisées, classées par fiabilité (🟢 🟡 🟠), et les flux RSS. |
-| `archives/AAAA-MM-JJ.html` | Le contenu des numéros passés. Le plus récent est **l'exemple de structure HTML** à suivre. |
+| `archives/AAAA-MM-JJ.html` | Le contenu des numéros passés : **l'exemple de structure HTML** à suivre, et tout ce qui a déjà été dit. |
 | `gabarit/page.html` | Le gabarit de la page web. N'y touche pas. |
 | `outils/assembler.py`, `outils/moule_mail.py`, `outils/moule_note.py` | Les programmes qui fabriquent la page, le mail et la note Obsidian. N'y touche pas. |
+
+## Étape 0 : vérifier qu'il faut travailler
+
+La routine se lance deux fois chaque lundi, à 5h03 et à 6h03 UTC, pour tomber à 7h03 à Paris l'été comme l'hiver. Une seule des deux doit travailler.
+
+1. Lance `TZ=Europe/Paris date '+%F %H'`. La date est D, la **date du numéro** ; le nombre qui suit est l'heure de Paris.
+2. Si l'heure est avant 07, **ou** si `archives/D.html` existe déjà, arrête-toi tout de suite. Réponds seulement « Rien à faire : lancement en double. » Ne crée, ne modifie, ne commite et ne pousse rien.
+3. Sinon, passe à l'étape 1.
 
 ## Étape 1 : préparer
 
 1. `pip install -q beautifulsoup4`
-2. La **date du numéro** D est la date du jour à Paris (`TZ=Europe/Paris date +%F`).
-3. Lis **en entier** `format.md` et `sources.md`.
-4. Lis les archives : la plus récente te donne la structure HTML exacte ; toutes te servent à ne rien répéter (format.md, partie 1) et à reprendre les **sorties à surveiller** encore futures.
+2. Lis **en entier** `format.md` et `sources.md`.
+3. Lis les archives. Toutes te servent à ne rien répéter (format.md, partie 1) et à reprendre les **sorties à surveiller** encore futures. Elles te donnent aussi la structure HTML : pour chaque rubrique, celle de l'archive la plus récente qui contient cette rubrique.
 
 ## Étape 2 : collecter
 
@@ -28,7 +35,7 @@ Tu écris un numéro de la newsletter **Content AI Influence**, une veille hebdo
 
 ## Étape 3 : écrire le contenu
 
-Écris `contenu/D.html` en suivant **exactement** le HTML de l'archive la plus récente : mêmes balises, mêmes classes, mêmes commentaires de séparation, même ordre. Ce fichier contient les `<section>` puis le `<footer>`, rien d'autre.
+Écris `contenu/D.html` en suivant **exactement** le HTML des archives : pour chaque rubrique, celui de l'archive la plus récente qui la contient (mêmes balises, mêmes classes, mêmes commentaires de séparation). Ce fichier contient les `<section>` puis le `<footer>`, rien d'autre.
 
 - Les identifiants des sections, dans cet ordre : `chiffre`, `items`, `campagne`, `bref`, `outil`, `archive`, `surveiller`. Une rubrique sans matière solide n'apparaît pas (format.md).
 - **La campagne décortiquée : ne l'écris pas pour l'instant.** Elle demande de regarder la vidéo, ce que tu ne peux pas encore faire. Pas de section `campagne`.
@@ -53,11 +60,11 @@ python3 outils/moule_note.py numeros/D.html notes/D.md "" NUMERO
 cp contenu/D.html archives/D.html
 ```
 
-- `NUMERO` : le numéro donné dans tes instructions de lancement.
+- `NUMERO` : celui de tes instructions de lancement s'il y en a un. Sinon, 1 + le nombre de fichiers `archives/AAAA-MM-JJ.html` datés du 2026-10-05 ou après, et d'avant D. Le numéro du 05/10/2026 est donc le 1, celui du 12/10/2026 le 2.
 - **Si tes instructions de lancement indiquent un objet de mail**, ajoute-le en toute première ligne de `mails/D.html` : `<!-- objet: … -->`. Sinon, n'ajoute rien : l'objet sera « Newsletter JJ/MM/AAAA ».
 - Fais **un seul commit** de tous les nouveaux fichiers, message « Numéro du JJ/MM/AAAA », puis `git push origin HEAD:main`. L'envoi du mail et la mise en ligne de la page se font ensuite tout seuls.
 - Si le push échoue, recopie l'erreur exacte et arrête-toi.
 
 ## Étape 6 : rendre compte
 
-Termine par un compte rendu en français : les rubriques et leur nombre d'éléments, le nombre de mots, les liens remplacés ou retirés, les sources qui n'ont pas répondu, et tout ce qui t'a semblé douteux.
+Termine par un compte rendu en français : le numéro, les rubriques et leur nombre d'éléments, le nombre de mots, les liens remplacés ou retirés, les sources qui n'ont pas répondu, et tout ce qui t'a semblé douteux.
