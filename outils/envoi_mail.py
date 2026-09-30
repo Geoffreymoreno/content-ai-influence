@@ -6,8 +6,9 @@ from email.message import EmailMessage
 
 chemin = sys.argv[1]
 a, m, j = re.search(r'(\d{4})-(\d{2})-(\d{2})', chemin).groups()
-objet = sys.argv[2] if len(sys.argv) > 2 and sys.argv[2] else f'Newsletter {j}/{m}/{a}'
 page = open(chemin, encoding='utf-8').read()
+note = re.match(r'\s*<!-- objet: (.+?) -->', page)   # objet imposé par le fichier (mails de test)
+objet = (sys.argv[2] if len(sys.argv) > 2 and sys.argv[2] else None) or (note.group(1) if note else f'Newsletter {j}/{m}/{a}')
 
 texte = re.sub(r'<div style="display:none.*?</div>', '', page, count=1, flags=re.S)
 texte = re.sub(r'</(p|h1|h3|tr|div)>', '\n', texte)
