@@ -1,0 +1,42 @@
+# Envoie le mail d'un numéro quand son fichier arrive dans mails/,
+# ou à la demande (onglet Actions → Envoi du mail → Run workflow).
+name: Envoi du mail
+
+on:
+  push:
+    branches: [main]
+    paths: ['mails/**']
+  workflow_dispatch:
+    inputs:
+      fichier:
+        description: 'Mail à envoyer (ex. mails/2026-09-29.html)'
+        required: true
+      objet:
+        description: "Objet du mail (vide = « Newsletter JJ/MM/AAAA »)"
+        required: false
+
+permissions:
+  contents: read
+
+jobs:
+  envoi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Envoyer
+        env:
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          MAIL_EXPEDITEUR: ${{ secrets.MAIL_EXPEDITEUR }}
+          MAIL_DESTINATAIRE: ${{ secrets.MAIL_DESTINATAIRE }}
+          FICHIER: ${{ inputs.fichier }}
+          OBJET: ${{ inputs.objet }}
+        run: |
+          if [ -n "$FICHIER" ]; then
+            python3 outils/envoi_mail.py "$FICHIER" "$OBJET"
+          else
+            for f in $(git diff --name-only --diff-filter=A HEAD^ HEAD -- 'mails/*.html'); do
+              python3 outils/envoi_mail.py "$f"
+            done
+          fi
