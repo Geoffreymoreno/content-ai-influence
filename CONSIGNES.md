@@ -14,10 +14,10 @@ Tu écris un numéro de la newsletter **Content AI Influence**, une veille hebdo
 
 ## Étape 0 : vérifier qu'il faut travailler
 
-La routine se lance deux fois chaque lundi, à 5h03 et à 6h03 UTC, pour tomber à 7h03 à Paris l'été comme l'hiver. Une seule des deux doit travailler.
+La routine se lance deux fois chaque lundi, à 3h33 et à 4h33 UTC, pour tomber à 5h33 à Paris l'été comme l'hiver. Une seule des deux doit travailler.
 
 1. Lance `TZ=Europe/Paris date '+%F %H'`. La date est D, la **date du numéro** ; le nombre qui suit est l'heure de Paris.
-2. Si l'heure est avant 07, **ou** si `archives/D.html` existe déjà, arrête-toi tout de suite. Réponds seulement « Rien à faire : lancement en double. » Ne crée, ne modifie, ne commite et ne pousse rien.
+2. Si l'heure est avant 05, **ou** si `archives/D.html` existe déjà, arrête-toi tout de suite. Réponds seulement « Rien à faire : lancement en double. » Ne crée, ne modifie, ne commite et ne pousse rien.
 3. Sinon, passe à l'étape 1.
 
 ## Étape 1 : préparer
