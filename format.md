@@ -12,7 +12,7 @@
 ## Partie 1 — Les règles communes
 
 ### La période couverte
-Les infos **publiées depuis le numéro précédent**, soit les **7 derniers jours** (du lundi 7 h 03 au lundi 7 h 03).
+Les infos **publiées depuis le numéro précédent**, soit les **7 derniers jours** (d'un lundi matin à l'autre).
 
 ### Pas de répétition d'une semaine à l'autre
 - Avant d'écrire, relire les numéros passés (dossier `archives/` du dépôt).
