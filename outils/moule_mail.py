@@ -209,7 +209,7 @@ jour = datetime.datetime.strptime(re.search(r'\d{2}/\d{2}/\d{4}', titre).group(0
 suivant = jour + datetime.timedelta(days=(7 - jour.weekday()) or 7)   # le lundi suivant
 LIEN_WEB = LIEN_WEB or f'https://geoffreymoreno.github.io/content-ai-influence/numeros/{jour:%Y-%m-%d}.html'
 MOIS = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre']
-pied = (f'<tr><td><div{st("foot")}><p{st("footP")}><strong style="color:#585F6D;">Newsletter Content-AI-Influence</strong> — numéro du {jour:%d/%m/%Y} · prochain numéro lundi {suivant.day} {MOIS[suivant.month - 1]} vers 6 h.</p>'
+pied = (f'<tr><td><div{st("foot")}><p{st("footP")}><strong style="color:#585F6D;">Newsletter Content-AI-Influence</strong> · numéro du {jour:%d/%m/%Y} · prochain numéro lundi {suivant.day} {MOIS[suivant.month - 1]} vers 6 h.</p>'
         f'<p{st("footP")}><a href="{LIEN_WEB}"{st("l")}>Lire ce numéro en version web →</a></p>'
         f'<p{st("footP")}>Sources FR et EN, restituées en français.</p></div></td></tr>')
 

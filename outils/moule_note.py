@@ -30,7 +30,7 @@ def liste(ul, archive=False):
     L = []
     for li in ul.find_all('li', recursive=False):
         b, s = li.find('b'), li.find('span')
-        L.append(f'- **{md(b)}** — {md(s)}' if (b and s and not archive) else f'- {md(li)}')
+        L.append(f'- **{md(b)}** : {md(s)}' if (b and s and not archive) else f'- {md(li)}')
     return '\n'.join(L)
 
 def blocs(blk):
@@ -130,7 +130,7 @@ for sec in secs:
             N.append(f'*{md(sm)}* → {md(s)}\n')
 
 N.append('---\n')
-N.append(f'*Newsletter Content-AI-Influence — numéro du {titre[-10:]}. Sources FR et EN, restituées en français. [Version web]({LIEN_WEB})*\n')
+N.append(f'*Newsletter Content-AI-Influence · numéro du {titre[-10:]}. Sources FR et EN, restituées en français. [Version web]({LIEN_WEB})*\n')
 texte = re.sub(r'\n{3,}', '\n\n', '\n'.join(N))
 open(SORTIE, 'w', encoding='utf-8').write(texte)
 print(SORTIE, len(texte.split('\n')), 'lignes')

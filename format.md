@@ -46,6 +46,7 @@ Les infos **publiées depuis le numéro précédent**, soit les **7 derniers jou
 - **Pas de jargon sans explication.** Les termes du métier en anglais restent permis (« brand deal », « UGC », « hook »).
 - **Phrases courtes, faits secs** dans « Ce qui se passe » ; l'interprétation va dans « Pourquoi ça te concerne ».
 - **Pas de tableaux larges** : les comparaisons deviennent des listes.
+- **Aucun tiret de ponctuation**, ni « — » ni « – », nulle part : paragraphes, titres, listes, textes des liens. Ils font « texte écrit par une IA » (demande de Geoffrey, 30/09/2026). À la place : une virgule, deux-points, des parenthèses, ou deux phrases. Les traits d'union des mots composés restent (peut-être, c'est-à-dire). Les numéros passés en contiennent : ne les imite pas.
 
 ### La longueur
 **10 à 12 minutes de lecture, soit environ 2 000 à 2 400 mots.** À ajuster après le numéro d'essai.
@@ -114,6 +115,7 @@ Une semaine pauvre donne un numéro court. **Une rubrique sans matière solide n
 5. **La longueur** : entre 2 000 et 2 400 mots, sauf semaine pauvre.
 6. **Les dates** du numéro sont justes : titre, sorties à surveiller, pied de page.
 7. **Le mail** passe les contrôles de son moule, puis **le mail réellement envoyé est relu** (« 📚 Newsletter — Moule du mail », partie 5).
+8. **Aucun tiret « — » ni « – »** dans le texte du numéro.
 
 ---
 
@@ -144,3 +146,4 @@ Il n'existe pas encore de dossier pour Instagram, YouTube, l'influence ou l'IA v
 | Date | Changement |
 |---|---|
 | 29/09/2026 | Création. Décisions de Geoffrey : 3 règles contre les répétitions entre rubriques, verdict de l'outil « d'après les tests publiés », mention « Suite », 7 jours couverts, 2 000 à 2 400 mots, dates à surveiller gardées jusqu'à leur passage |
+| 30/09/2026 | Plus aucun tiret de ponctuation (« — », « – ») dans le texte : ils font « IA » (demande de Geoffrey) |

@@ -40,8 +40,8 @@ La routine se lance deux fois chaque lundi, à 3h33 et à 4h33 UTC, pour tomber 
 - Les identifiants des sections, dans cet ordre : `chiffre`, `items`, `campagne`, `bref`, `outil`, `archive`, `surveiller`. Une rubrique sans matière solide n'apparaît pas (format.md).
 - **La campagne décortiquée : ne l'écris pas pour l'instant.** Elle demande de regarder la vidéo, ce que tu ne peux pas encore faire. Pas de section `campagne`.
 - Le titre de la rubrique des news porte leur nombre : `🗞️ Les 4 news de la semaine`. La rubrique des brèves porte `<span class="count">N</span>`.
-- Le pied de page : `<p><strong>Newsletter Content-AI-Influence</strong> — numéro du JJ/MM/AAAA.</p>` puis `<p>Infos publiées du … au … AAAA. Sources FR et EN, restituées en français.</p>`.
-- Écriture : en français, tutoiement, une idée par paragraphe (45 mots au plus), une énumération de plus de deux éléments devient une liste, pas de jargon sans explication. Tout le reste est dans `format.md`.
+- Le pied de page : `<p><strong>Newsletter Content-AI-Influence</strong> · numéro du JJ/MM/AAAA.</p>` puis `<p>Infos publiées du … au … AAAA. Sources FR et EN, restituées en français.</p>`.
+- Écriture : en français, tutoiement, une idée par paragraphe (45 mots au plus), une énumération de plus de deux éléments devient une liste, pas de jargon sans explication, **aucun tiret « — » ni « – »** (une virgule, deux-points, des parenthèses ou deux phrases à la place, même si les archives en contiennent). Tout le reste est dans `format.md`.
 
 ## Étape 4 : vérifier (format.md, partie 3)
 
@@ -50,6 +50,7 @@ La routine se lance deux fois chaque lundi, à 3h33 et à 4h33 UTC, pour tomber 
 3. Aucun paragraphe de plus de 45 mots.
 4. Aucune répétition avec les archives, sauf mention « Suite ».
 5. Les dates sont justes : titre, sorties à surveiller (toutes futures), pied de page.
+6. Aucun tiret : `grep -F -c -e '—' -e '–' contenu/D.html` doit donner 0. Sinon, reformule chaque phrase concernée.
 
 ## Étape 5 : fabriquer et publier
 
