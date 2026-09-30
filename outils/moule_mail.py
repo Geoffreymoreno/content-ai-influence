@@ -145,7 +145,7 @@ entete = (f'<tr><td{st("mast")}><h1{st("h1")}>{titre}</h1>'
 
 prog = ''.join(f'<tr><td width="28"{st("progL")}>{x.select_one(".bandeau-emoji").get_text()}</td><td{st("progL")}>{x.select_one(".bandeau-nom").get_text()}</td>'
                f'<td{st("progN")}>{x.small.get_text()}</td></tr>' for x in src.select('.bandeau-liste a'))
-programme = f'<tr><td><div{st("prog")}><p{st("progT")}>Au programme · {len(src.select('.bandeau-liste a'))} rubriques</p>{T(prog)}</div></td></tr>'
+programme = f'<tr><td><div{st("prog")}><p{st("progT")}>Au programme · {len(src.select(".bandeau-liste a"))} rubriques</p>{T(prog)}</div></td></tr>'
 
 # ─── Rubriques ───
 corps = ''
