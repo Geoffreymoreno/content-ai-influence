@@ -1,5 +1,6 @@
 # Envoie le mail d'un numéro quand son fichier arrive dans mails/,
 # ou à la demande (onglet Actions → Envoi du mail → Run workflow).
+# À la demande, « pour » envoie à certains prénoms du carnet seulement.
 name: Envoi du mail
 
 on:
@@ -13,6 +14,9 @@ on:
         required: true
       objet:
         description: "Objet du mail (vide = « Newsletter JJ/MM/AAAA »)"
+        required: false
+      pour:
+        description: 'Prénoms des destinataires, séparés par des virgules (vide = tout le carnet)'
         required: false
 
 permissions:
@@ -32,6 +36,7 @@ jobs:
           MAIL_DESTINATAIRE: ${{ secrets.MAIL_DESTINATAIRE }}
           FICHIER: ${{ inputs.fichier }}
           OBJET: ${{ inputs.objet }}
+          MAIL_POUR: ${{ inputs.pour }}
         run: |
           if [ -n "$FICHIER" ]; then
             python3 outils/envoi_mail.py "$FICHIER" "$OBJET"
