@@ -1,0 +1,1364 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Newsletter 12/10/2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500..900&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+  :root{
+    color-scheme: light;
+
+    --bg:#FFFFFF;
+    --surface:#FAFAFB;
+    --surface-2:#F4F5F7;
+    --text:#15181F;
+    --body:#2C313C;
+    --muted:#585F6D;
+    --faint:#8B93A1;
+    --line:#E7E9ED;
+    --line-strong:#CDD2DA;
+
+    --accent:#8F5A0E;
+    --accent-soft:#FBF4E6;
+    --accent-edge:#E4CFA6;
+
+    --p-tiktok:#0E7490;
+    --p-meta:#BE185D;
+    --p-youtube:#B91C1C;
+    --p-ai:#6D28D9;
+    --p-market:#047857;
+
+    --f-display:"Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;
+    --f-body:"Public Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+
+    --xs:0.75rem;
+    --sm:0.875rem;
+    --base:1.094rem;
+    --lg:1.281rem;
+    --xl:1.531rem;
+    --xxl:2.5rem;
+
+    --indent:34px;
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--body);
+    font-family:var(--f-body);
+    font-size:var(--base);
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  .wrap{
+    max-width:672px;
+    margin:0 auto;
+    padding-inline:22px;
+    padding-block:0 96px;
+  }
+
+  a{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px solid var(--accent-edge);
+  }
+  a:hover{border-bottom-color:var(--accent);}
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px;}
+
+  /* ═══════════ En-tête ═══════════ */
+  .masthead{padding-block:48px 28px;}
+  h1{
+    font-family:var(--f-display);
+    font-size:var(--xxl);font-weight:700;letter-spacing:-.028em;line-height:1.06;
+    color:var(--text);margin:0 0 18px;text-wrap:balance;
+  }
+  .meta{margin:0;font-size:var(--sm);color:var(--muted);line-height:1.5;}
+  /* Chaque bloc reste entier : si la ligne est trop courte, la coupure se fait après le tiret */
+  .meta-bloc{white-space:nowrap;}
+  .meta-sep{color:var(--faint);margin-inline:.3em;}
+  /* L'horloge et les bulles des thèmes n'apparaissent que sur téléphone */
+  .meta-horloge,.meta-bulle{display:none;}
+
+  /* ═══════════ Sommaire collant ═══════════ */
+  .toc{
+    position:sticky;top:env(safe-area-inset-top, 0px);z-index:20;
+    background:rgba(255,255,255,.93);
+    backdrop-filter:saturate(180%) blur(12px);
+    -webkit-backdrop-filter:saturate(180%) blur(12px);
+    border-block:1px solid var(--line);
+    margin-inline:-22px;
+  }
+  .toc-inner{
+    display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;
+    padding:10px 22px;
+  }
+  .toc-inner::-webkit-scrollbar{display:none;}
+  .toc a{
+    flex:0 0 auto;
+    font-family:var(--f-display);font-size:var(--xs);font-weight:600;
+    color:var(--muted);background:var(--surface);
+    border:1px solid var(--line);
+    padding:6px 12px;border-radius:999px;white-space:nowrap;
+    transition:color .15s, border-color .15s;
+  }
+  .toc a:hover{color:var(--text);border-color:var(--line-strong);}
+
+  /* ═══════════ Titres de section ═══════════ */
+  section{scroll-margin-top:76px;padding-block:64px 0;}
+  .sec-label{
+    display:flex;align-items:baseline;gap:10px;
+    font-family:var(--f-display);
+    font-size:0.76rem;font-weight:700;letter-spacing:.17em;text-transform:uppercase;
+    color:var(--text);
+    padding-bottom:12px;margin-bottom:34px;
+    border-bottom:2px solid var(--line-strong);
+  }
+  .sec-label .count{
+    margin-left:auto;letter-spacing:.06em;color:var(--faint);font-weight:600;
+  }
+
+  /* ═══════════ Chiffre de la semaine ═══════════ */
+  .figure{
+    background:var(--accent-soft);
+    border:1px solid var(--accent-edge);
+    border-radius:6px;padding:32px 30px;
+  }
+  .figure .big{
+    font-family:var(--f-display);font-size:clamp(3.2rem,14vw,4.5rem);font-weight:700;
+    line-height:.92;letter-spacing:-.045em;color:var(--accent);
+    font-variant-numeric:tabular-nums;margin-bottom:12px;
+  }
+  .figure .cap{
+    font-family:var(--f-display);font-size:var(--lg);font-weight:600;
+    color:var(--text);letter-spacing:-.014em;line-height:1.32;margin-bottom:20px;
+  }
+  .figure p{margin:0 0 16px;color:var(--muted);font-size:var(--sm);line-height:1.72;}
+  .figure p:last-child{margin-bottom:0;}
+
+  /* ═══════════ Pastilles plateforme ═══════════ */
+  .pill{
+    display:inline-flex;align-items:center;gap:7px;
+    font-family:var(--f-display);font-size:var(--xs);font-weight:700;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--tone,var(--muted));
+    white-space:nowrap;line-height:1;
+  }
+  .pill::before{
+    content:"";width:8px;height:8px;border-radius:50%;
+    background:var(--tone,var(--muted));flex:0 0 auto;
+  }
+  .t-tiktok{--tone:var(--p-tiktok);}
+  .t-meta{--tone:var(--p-meta);}
+  .t-youtube{--tone:var(--p-youtube);}
+  .t-ai{--tone:var(--p-ai);}
+  .t-market{--tone:var(--p-market);}
+
+  /* ═══════════ Items développés ═══════════ */
+  .items{display:flex;flex-direction:column;}
+
+  .item{padding-block:0 56px;}
+  .item + .item{border-top:1px solid var(--line);padding-top:56px;}
+
+  .item-head{display:flex;gap:16px;align-items:flex-start;}
+  .num{
+    font-family:var(--f-display);font-size:var(--xs);font-weight:700;
+    color:var(--line-strong);font-variant-numeric:tabular-nums;
+    padding-top:10px;flex:0 0 auto;min-width:18px;letter-spacing:.04em;
+  }
+  .item-head > div{min-width:0;}
+  .item h3{
+    font-family:var(--f-display);font-size:var(--xl);font-weight:700;
+    color:var(--text);letter-spacing:-.026em;line-height:1.24;
+    margin:10px 0 0;text-wrap:balance;
+  }
+  .src-top{font-size:var(--sm);color:var(--muted);margin:12px 0 0;}
+
+  .item-body{
+    display:flex;flex-direction:column;gap:38px;
+    padding-left:var(--indent);margin-top:36px;
+  }
+  .blk{display:flex;flex-direction:column;gap:16px;}
+  .blk-label{
+    font-family:var(--f-display);font-size:0.688rem;font-weight:700;
+    letter-spacing:.15em;text-transform:uppercase;color:var(--faint);
+    margin:0;line-height:1;
+  }
+  .blk p{margin:0;}
+
+  .blk-action{
+    background:var(--accent-soft);
+    border-left:3px solid var(--accent);
+    border-radius:0 5px 5px 0;
+    padding:22px 24px;gap:14px;
+  }
+  .blk-action .blk-label{color:var(--accent);}
+
+  .quote{
+    font-family:var(--f-display);font-size:var(--base);font-weight:600;
+    color:var(--text);line-height:1.5;margin:0;letter-spacing:-.008em;
+  }
+
+  .src-more{
+    font-size:var(--sm);color:var(--faint);
+    margin:32px 0 0;padding-left:var(--indent);
+  }
+  .src-more a{color:var(--muted);border-bottom-color:var(--line-strong);}
+  .src-more a:hover{color:var(--accent);}
+
+  ul.plain{
+    list-style:none;margin:0;padding:0;
+    display:flex;flex-direction:column;gap:13px;
+  }
+  ul.plain li{
+    display:flex;gap:12px;align-items:baseline;
+    padding-left:16px;position:relative;line-height:1.6;
+  }
+  ul.plain li::before{
+    content:"";position:absolute;left:0;top:.62em;
+    width:5px;height:5px;border-radius:50%;background:var(--line-strong);
+  }
+  ul.plain b{
+    font-family:var(--f-display);font-weight:600;color:var(--text);
+    flex:0 0 auto;
+  }
+  ul.plain span{color:var(--muted);font-size:var(--sm);}
+
+  /* ═══════════ Emplacement vide ═══════════ */
+  .empty{
+    border:1px dashed var(--line-strong);border-radius:6px;
+    padding:28px 28px;color:var(--muted);font-size:var(--sm);
+    background:var(--surface);
+    display:flex;flex-direction:column;gap:14px;
+  }
+  .empty strong{
+    font-family:var(--f-display);font-weight:700;color:var(--text);
+    font-size:var(--base);line-height:1.4;
+  }
+  .empty p{margin:0;line-height:1.72;}
+
+  /* ═══════════ En bref ═══════════ */
+  .briefs{display:flex;flex-direction:column;}
+  .brief{
+    padding-block:24px;border-bottom:1px solid var(--line);
+    display:flex;flex-direction:column;gap:9px;
+  }
+  .brief:first-child{padding-top:0;}
+  .brief:last-child{border-bottom:none;padding-bottom:0;}
+  .brief h4{
+    font-family:var(--f-display);font-size:var(--base);font-weight:700;
+    color:var(--text);letter-spacing:-.016em;line-height:1.38;margin:0;
+  }
+  .brief p{margin:0;color:var(--muted);font-size:var(--sm);line-height:1.72;}
+  .brief .lnk{font-size:var(--sm);}
+  .brief p:not(.lnk) + p:not(.lnk){margin-top:5px;}
+
+  /* ═══════════ Outil ═══════════ */
+  .tool{
+    background:var(--surface);border:1px solid var(--line);border-radius:6px;
+    padding:30px 28px;display:flex;flex-direction:column;gap:18px;
+  }
+  .tool-top{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;}
+  .tool h3{
+    font-family:var(--f-display);font-size:var(--xl);font-weight:700;
+    color:var(--text);letter-spacing:-.024em;margin:0;
+  }
+  .verdict{
+    font-family:var(--f-display);font-size:0.688rem;font-weight:700;
+    letter-spacing:.11em;text-transform:uppercase;
+    color:var(--p-market);border:1px solid #9FD4BE;
+    background:#ECF8F3;
+    padding:4px 11px;border-radius:999px;white-space:nowrap;
+  }
+  .tool p{margin:0;}
+  .tool .why{color:var(--muted);font-size:var(--sm);line-height:1.72;}
+
+  /* ═══════════ Ce que j'archive ═══════════ */
+  .arch{display:flex;flex-direction:column;gap:24px;}
+  .arch-card{
+    border:1px solid var(--line);border-radius:6px;
+    background:var(--surface);padding:28px 26px;
+    display:flex;flex-direction:column;gap:20px;
+  }
+  .arch-card h4{
+    font-family:var(--f-display);font-size:var(--lg);font-weight:700;
+    color:var(--text);letter-spacing:-.02em;margin:0;line-height:1.3;
+  }
+  .arch-field{display:flex;flex-direction:column;gap:9px;}
+  /* Plusieurs paragraphes à la suite : plus d'air entre eux qu'entre une étiquette et son texte */
+  .arch-field > p:not(.lbl) + p,.arch-field > p:not(.lbl) + ul{margin-top:7px;}
+  .lbl{
+    font-family:var(--f-display);font-size:0.688rem;font-weight:700;
+    letter-spacing:.15em;text-transform:uppercase;color:var(--faint);
+    margin:0;line-height:1;
+  }
+  .path{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:var(--xs);color:var(--accent);background:var(--accent-soft);
+    border:1px solid var(--accent-edge);
+    border-radius:4px;padding:11px 13px;margin:0;
+    overflow-x:auto;white-space:pre-wrap;word-break:break-word;line-height:1.65;
+  }
+  .arch-card p{margin:0;color:var(--muted);font-size:var(--sm);line-height:1.72;}
+  .arch-card ul.plain span,.arch-card ul.plain li{font-size:var(--sm);color:var(--muted);}
+  .trigger{
+    font-family:var(--f-display);font-size:var(--sm);font-weight:600;
+    color:var(--text);margin:0;padding-top:20px;border-top:1px solid var(--line);
+  }
+  .trigger code{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:var(--xs);color:var(--accent);
+    background:var(--accent-soft);border:1px solid var(--accent-edge);
+    padding:2px 6px;border-radius:3px;
+  }
+
+  /* ═══════════ À surveiller ═══════════ */
+  .watch{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;}
+  .watch li{
+    display:flex;gap:20px;align-items:baseline;
+    padding-block:20px;border-bottom:1px solid var(--line);
+  }
+  .watch li:first-child{padding-top:0;}
+  .watch li:last-child{border-bottom:none;padding-bottom:0;}
+  .watch .when{
+    font-family:var(--f-display);font-size:var(--sm);font-weight:700;
+    color:var(--accent);font-variant-numeric:tabular-nums;
+    flex:0 0 104px;letter-spacing:-.006em;line-height:1.5;
+  }
+  .watch .what{font-size:var(--sm);color:var(--text);line-height:1.6;}
+  .watch .what small{
+    display:block;color:var(--muted);font-size:var(--xs);
+    margin-top:6px;line-height:1.65;
+  }
+  /* Source de la date, en dernier : même rôle que le lien d'une brève */
+  .watch .src{display:block;margin-top:8px;font-size:var(--sm);line-height:1.5;}
+
+  /* ═══════════ Pied ═══════════ */
+  footer{
+    margin-top:72px;padding-top:28px;border-top:1px solid var(--line);
+    font-size:var(--sm);color:var(--faint);line-height:1.72;
+    display:flex;flex-direction:column;gap:9px;
+  }
+  footer p{margin:0;}
+  footer strong{color:var(--muted);font-family:var(--f-display);font-weight:600;}
+
+  /* ═══════════ Bouton retour en haut (affiché par les blocs téléphone et ordinateur) ═══════════ */
+  .to-top{display:none;}
+  h1[tabindex="-1"]:focus{outline:none;}
+
+  /* ═══════════ Bandeau « où j'en suis » (affiché par les blocs téléphone et ordinateur) ═══════════ */
+  .bandeau{display:none;}
+
+  /* ═══════════ Téléphone (jusqu'à 520 px) ═══════════
+     Valeurs de la version mobile, réglées avec l'atelier téléphone.
+     Bloc indépendant de celui de l'ordinateur : régler l'un ne touche jamais l'autre. */
+  @media (max-width:520px){
+    :root{
+      --indent:0px;--xxl:2.1rem;--xl:1.375rem;
+
+      /* Réglages de Geoffrey dans l'atelier, appliqués le 28/09/2026 et le 29/09/2026 */
+      --m-text-size:17.5px;
+      --m-text-lh:1.75;
+      --m-text-color:#2C313C;
+      --m-h3-size:18px;
+      --m-h3-weight:700;
+      --m-h3-lh:1.24;
+      --m-h3-ls:0.008em;
+      --m-label-size:12.5px;
+      --m-label-weight:900;
+      --m-label-ls:0.15em;
+      --m-label-color:#C48A0E;
+      --m-sec-size:15.5px;
+      --m-sec-weight:760;
+      --m-sec-ls:0.075em;
+      --m-sec-rule:2px;
+      --m-sec-color:#15181F;
+      --m-h1-size:33.8px;
+      --m-big-size:56px;
+      --m-brief-h-size:17.5px;
+      --m-brief-p-size:16px;
+      --m-gutter:29px;
+      --m-item-gap:38px;
+      --m-blk-gap:36px;
+      --m-para-gap:16px;
+      --m-sec-space:42px;
+      --m-top-size:42px;
+
+      /* Taille de tout le contenu : 100 % = tailles réglées ci-dessous (iPhone 17) */
+      --m-zoom:91%;
+
+      /* Anneau des bulles de thèmes, sous le titre : un dégradé d'ambre qui fait le tour de chaque bulle */
+      --m-bulle-clair:#EAA648;
+      --m-bulle-moyen:#C27C12;
+      --m-bulle-fonce:#8F5A0E;
+      --m-bulle-lisere:2.5px;
+
+      /* Barres verticales partagées : l'encadré ambre et le fil de couleur des items
+         partent du même axe, et leurs textes s'alignent tant que ces variables sont liées */
+      --m-barre:3.5px;
+      --m-encadre-pad:20px;
+      --m-fil-ecart:var(--m-encadre-pad);
+
+      --base:var(--m-text-size);
+    }
+    body{line-height:var(--m-text-lh);color:var(--m-text-color);}
+    /* Réduit ou agrandit toute la page d'un coup, dans les mêmes proportions, comme le zoom du navigateur */
+    .wrap{padding-inline:var(--m-gutter);zoom:var(--m-zoom);}
+    .toc{margin-inline:calc(var(--m-gutter) * -1);}
+    .toc-inner{padding-inline:var(--m-gutter);}
+
+    /* Bandeau « où j'en suis » : il remplace les pastilles du sommaire dès que son script tourne.
+       Sans script, les pastilles restent : la navigation ne disparaît jamais. */
+    .avec-bandeau .toc{display:none;}
+    .avec-bandeau .bandeau{display:block;}
+    .bandeau{
+      position:sticky;top:env(safe-area-inset-top, 0px);z-index:20;
+      margin-inline:calc(var(--m-gutter) * -1);
+      /* Fond plein (et non translucide) : l'atelier ne sait régler qu'une couleur pleine */
+      background:var(--bg);
+      border-bottom:1px solid var(--line);
+    }
+    .bandeau-bouton{
+      width:100%;display:flex;align-items:center;gap:8px;
+      padding:11px var(--m-gutter);margin:0;background:none;border:0;border-radius:0;cursor:pointer;
+      font-family:var(--f-display);font-size:14px;font-weight:700;line-height:1.75;
+      color:var(--text);text-align:left;
+      -webkit-tap-highlight-color:transparent;
+    }
+    .bandeau-bouton:focus-visible{outline:2px solid var(--accent);outline-offset:-3px;}
+    .bandeau-libelle{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    .bandeau-bouton svg{flex:0 0 auto;width:16px;height:16px;color:var(--faint);transition:transform .2s ease;}
+    .bandeau.est-ouvert .bandeau-bouton svg{transform:rotate(180deg);}
+    .bandeau-progres{height:3px;background:#F1F2F4;}
+    .bandeau-progres span{display:block;width:0;height:100%;background:#C27C12;}
+    .bandeau-liste{
+      position:absolute;left:0;right:0;top:100%;
+      background:var(--bg);border-bottom:1px solid var(--line);
+      box-shadow:0 18px 30px -16px rgba(21,24,31,.25);
+      padding:6px 0 10px;
+    }
+    .bandeau-liste a{
+      display:grid;grid-template-columns:28px minmax(0,1fr) auto;align-items:center;gap:10px;
+      padding:11px var(--m-gutter);border:0;
+      font-family:var(--f-display);font-size:15px;font-weight:650;line-height:1.75;color:var(--text);
+      -webkit-tap-highlight-color:transparent;
+    }
+    .bandeau-liste small{font-family:var(--f-body);font-size:13px;font-weight:500;color:var(--faint);}
+    .bandeau-liste a[aria-current]{color:var(--accent);background:var(--accent-soft);}
+    .bandeau-liste a:focus-visible{outline:2px solid var(--accent);outline-offset:-3px;border-radius:0;}
+
+    /* En-tête : sous le titre, la ligne d'infos devient des « stories » (piste 4, 29/09/2026) :
+       « Formats courts · 10 min de lecture », puis chaque thème dans une bulle cerclée d'ambre, avec son pictogramme.
+       Sur ordinateur, elle reste une ligne de texte : l'horloge et les bulles y sont masquées.
+       Le titre et la ligne du haut sont centrés ; la ligne est à mi-chemin entre le titre et les bulles (30/09/2026). */
+    .masthead{padding-block:46px 29px;}
+    h1{font-size:var(--m-h1-size);margin-bottom:14px;text-align:center;}
+    .meta{
+      display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:18px 7px;
+      font-size:13.5px;line-height:1.5;color:var(--muted);
+    }
+    /* Les deux blocs s'effacent : leurs morceaux se rangent dans la ligne, « Formats courts » en premier */
+    .meta-bloc,.meta-sujet > .meta-valeur{display:contents;}
+    .meta-nom{order:1;font-family:var(--f-display);font-size:15px;font-weight:700;color:var(--text);}
+    .meta::before{content:"·";content:"·" / "";order:2;}
+    .meta-horloge{order:3;display:block;flex:0 0 auto;width:16px;height:16px;color:var(--accent);}
+    .meta-horloge svg{display:block;width:100%;height:100%;}
+    .meta-duree > .meta-valeur{order:4;}
+    .meta-sep,.meta-dp,.meta-et{display:none;}
+    /* Les thèmes : cinq colonnes égales, une bulle et son nom dans chacune */
+    .meta-themes{order:5;flex:0 0 100%;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));column-gap:4px;}
+    .meta-theme{
+      display:flex;flex-direction:column;align-items:center;row-gap:7px;min-width:0;
+      font-family:var(--f-display);font-size:11.5px;font-weight:650;color:var(--text);
+    }
+    .meta-bulle{
+      display:block;width:58px;max-width:100%;aspect-ratio:1;border-radius:50%;padding:2.5px;
+      background:conic-gradient(from 210deg,var(--m-bulle-clair),var(--m-bulle-moyen),var(--m-bulle-fonce),var(--m-bulle-moyen),var(--m-bulle-clair));
+    }
+    .meta-bulle > span{
+      display:flex;align-items:center;justify-content:center;width:100%;height:100%;border-radius:50%;
+      background:var(--accent-soft);border:var(--m-bulle-lisere) solid var(--bg);color:var(--accent);
+    }
+    .meta-bulle svg{display:block;width:24px;height:24px;}
+
+    .figure{padding:26px 22px;}
+    .figure .big{font-size:var(--m-big-size);letter-spacing:-.044em;color:#EAA648;text-align:center;}
+    .figure .cap{font-size:21.5px;font-weight:650;line-height:1.29;text-align:center;}
+    .figure p{font-size:16px;color:#000919;}
+
+    /* Après un saut depuis le bandeau, le titre de la rubrique s'arrête 76 px sous le haut de l'écran */
+    section{padding-top:var(--m-sec-space);scroll-margin-top:max(0px, calc(76px - var(--m-sec-space)));}
+    /* Titre de rubrique centré sur son trait : ——— TITRE ——— */
+    .sec-label{
+      font-size:var(--m-sec-size);font-weight:var(--m-sec-weight);
+      letter-spacing:var(--m-sec-ls);color:var(--m-sec-color);
+      justify-content:center;align-items:center;text-align:center;column-gap:10px;
+      text-wrap:balance;
+      border-bottom:0;padding-bottom:0;margin-bottom:28px;
+    }
+    /* Traits d'au moins 12 px : le titre le plus long (286 px) tient sur une ligne dans 344 px */
+    .sec-label::before,.sec-label::after{
+      content:"";flex:1 1 0;min-width:12px;
+      height:var(--m-sec-rule);background:var(--line-strong);
+    }
+    .sec-label .count{margin-left:0;}
+    .pill{font-size:13px;}
+
+    /* En-tête d'item « fil de couleur » : le numéro passe sur la ligne de la pastille,
+       et un trait à la couleur de la plateforme longe numéro, pastille, titre et source.
+       Le trait part sur l'axe de la barre de l'encadré ambre, le texte s'aligne sur le sien. */
+    .item-head:has(.t-tiktok){--tone:var(--p-tiktok);}
+    .item-head:has(.t-meta){--tone:var(--p-meta);}
+    .item-head:has(.t-youtube){--tone:var(--p-youtube);}
+    .item-head:has(.t-ai){--tone:var(--p-ai);}
+    .item-head:has(.t-market){--tone:var(--p-market);}
+    .item-head{
+      position:relative;flex-wrap:wrap;align-items:center;gap:0 10px;
+      padding-left:calc(var(--m-barre) + var(--m-fil-ecart));
+    }
+    .item-head::before{
+      content:"";position:absolute;left:0;top:0;bottom:4px;
+      width:var(--m-barre);background:var(--tone,var(--line-strong));
+    }
+    .item-head > div{display:contents;}
+    .num{
+      padding-top:0;min-width:0;
+      font-size:13px;font-weight:800;letter-spacing:.02em;color:var(--tone,var(--faint));
+    }
+    /* Petit filet entre le numéro et la plateforme : il remplace le point de la pastille */
+    .num::after{
+      content:"";display:inline-block;width:1px;height:11px;margin-left:10px;
+      vertical-align:-1px;background:var(--line-strong);
+    }
+    .item-head .pill::before{display:none;}
+    .item h3,.src-top{flex:0 0 100%;}
+    .item h3{
+      font-size:var(--m-h3-size);font-weight:var(--m-h3-weight);
+      line-height:var(--m-h3-lh);letter-spacing:var(--m-h3-ls);
+      /* Lignes remplies jusqu'à la marge, sans laisser un mot seul sur la dernière ligne */
+      margin-top:13px;text-wrap:pretty;
+    }
+
+    .item{padding-bottom:var(--m-item-gap);}
+    .item + .item{padding-top:var(--m-item-gap);}
+    .item-body{gap:var(--m-blk-gap);margin-top:var(--m-blk-gap);}
+    .blk{gap:var(--m-para-gap);}
+    .blk-label{
+      font-size:var(--m-label-size);font-weight:var(--m-label-weight);
+      letter-spacing:var(--m-label-ls);color:var(--m-label-color);
+    }
+    .item-body .blk > p:not(.blk-label):not(.quote),
+    .item-body ul.plain li{font-size:16.5px;}
+    .quote{font-weight:550;}
+    .src-more{margin-top:33px;}
+    .blk-action{
+      padding:var(--m-encadre-pad);background-color:#FFF8EB;
+      border-left-width:var(--m-barre);border-radius:0 18px 18px 0;
+    }
+
+    .brief h4{font-size:var(--m-brief-h-size);text-wrap:pretty;}
+    .brief p:not(.lnk){font-size:var(--m-brief-p-size);line-height:1.71;}
+    .brief .lnk{font-size:14px;}
+
+    .arch-card,.tool{padding:24px 20px;}
+    .tool .why{font-size:16px;line-height:1.75;color:#18191B;}
+
+    /* « .arch-card » en préfixe : sinon la règle « .arch-card p » l'emporte sur les étiquettes */
+    .arch-card .lbl{font-size:14.5px;font-weight:770;letter-spacing:.151em;color:#D3884A;}
+    .arch-card p:not(.lbl):not(.trigger),
+    .arch-card ul.plain li{font-size:16px;color:#050C1A;}
+    .arch-card .trigger{font-size:15.5px;color:#010B1E;}
+
+    .watch li{flex-direction:column;gap:4px;align-items:stretch;}
+    .watch .when{flex:none;font-size:16.5px;}
+    .watch .what{font-size:16.5px;color:#000000;}
+    .watch .what small{font-size:13.5px;}
+
+    footer{font-size:13.5px;}
+
+    .to-top{
+      display:flex;align-items:center;justify-content:center;
+      position:fixed;z-index:30;
+      right:calc(14px + env(safe-area-inset-right, 0px));
+      bottom:calc(20px + env(safe-area-inset-bottom, 0px));
+      width:var(--m-top-size);height:var(--m-top-size);
+      padding:0;border-radius:50%;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+      border:1px solid var(--line-strong);
+      box-shadow:0 6px 18px rgba(21,24,31,.12),0 1px 3px rgba(21,24,31,.08);
+      color:var(--text);cursor:pointer;
+      -webkit-tap-highlight-color:transparent;
+      opacity:0;visibility:hidden;transform:translateY(10px);
+      transition:opacity .2s ease,transform .2s ease,visibility 0s linear .2s;
+    }
+    .to-top.is-visible{opacity:1;visibility:visible;transform:none;transition-delay:0s;}
+    /* Zone tactile plus large que le rond visible */
+    .to-top::after{content:"";position:absolute;inset:-5px;border-radius:50%;}
+    .to-top svg{width:44%;height:44%;}
+    .to-top:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+  }
+
+  /* ═══════════ Ordinateur (à partir de 521 px) ═══════════
+     Une seule colonne de lecture, centrée dans la page, avec une marge à gauche et à droite :
+     l'en-tête, le bandeau « Au programme », puis les rubriques les unes sous les autres.
+     Bloc indépendant de celui du téléphone : régler l'un ne touche jamais l'autre.
+     Les valeurs se règlent dans l'atelier ordinateur. */
+  @media (min-width:521px){
+    :root{
+      --indent:0px;
+
+      /* Réglages de Geoffrey dans l'atelier ordinateur : 45 appliqués le 28/09/2026, 28 le 29/09/2026 */
+
+      /* Mise en page : largeur maximale de la colonne, marge minimale de chaque côté */
+      --d-colonne:1320px;
+      --d-gutter:47px;
+
+      --d-text-size:18px;
+      --d-text-lh:1.75;
+      --d-text-color:#2C313C;
+      --d-h1-size:58px;
+      --d-h3-size:25px;
+      --d-h3-weight:700;
+      --d-h3-lh:1.24;
+      --d-h3-ls:0.008em;
+      --d-label-size:19px;
+      --d-label-weight:820;
+      --d-label-ls:0.15em;
+      --d-label-color:#C48A0E;
+      --d-sec-size:22px;
+      --d-sec-weight:760;
+      --d-sec-ls:0.075em;
+      --d-sec-rule:2px;
+      --d-sec-color:#15181F;
+      --d-big-size:99px;
+      --d-brief-h-size:22px;
+      --d-brief-p-size:21px;
+
+      --d-sec-space:44px;
+      --d-item-gap:50px;
+      --d-blk-gap:46px;
+      --d-para-gap:17px;
+      --d-top-size:46px;
+
+      /* Barres verticales partagées, comme sur téléphone : le fil de couleur des items
+         et la barre de l'encadré ambre gardent la même épaisseur et le même axe */
+      --d-barre:4px;
+      --d-encadre-pad:26px;
+      --d-fil-ecart:var(--d-encadre-pad);
+
+      /* Taille de tout le contenu sur ordinateur portable (voir le bloc suivant) : 100 % = tailles réglées ci-dessous */
+      --d-zoom-portable:79%;
+
+      --base:var(--d-text-size);
+    }
+    body{line-height:var(--d-text-lh);color:var(--d-text-color);}
+    /* L'exposant de « 1er » ne décale plus la ligne qui le porte */
+    sup{line-height:0;}
+    /* La colonne reste centrée : jamais plus large que --d-colonne, avec au moins --d-gutter de chaque côté */
+    .wrap{max-width:calc(var(--d-colonne) + var(--d-gutter) * 2);padding-inline:var(--d-gutter);}
+
+    .masthead{padding-block:72px 32px;text-align:center;}
+    h1{font-size:var(--d-h1-size);font-weight:770;letter-spacing:-.027em;}
+    .meta{font-size:20px;color:#E25418;}
+
+    /* Sommaire de secours, sans script : les pastilles passent à la ligne au lieu de défiler */
+    .toc{margin-inline:0;}
+    .toc-inner{padding-inline:0;flex-wrap:wrap;}
+
+    /* Bandeau « Au programme » : sous le titre, sur la largeur de la colonne.
+       Pendant la lecture, il reste collé en haut de l'écran et montre la rubrique en cours. */
+    .avec-bandeau .toc{display:none;}
+    .avec-bandeau .bandeau{display:block;}
+    .bandeau{
+      position:sticky;top:env(safe-area-inset-top, 0px);z-index:20;
+      background:var(--bg);
+      border-bottom:1px solid var(--line);
+    }
+    .bandeau-bouton{
+      width:100%;display:flex;align-items:center;gap:10px;
+      padding:16px 0;margin:0;background:none;border:0;border-radius:0;cursor:pointer;
+      font-family:var(--f-display);font-size:20px;font-weight:750;line-height:1.6;
+      color:var(--text);text-align:left;
+    }
+    .bandeau-bouton:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px;}
+    .bandeau-libelle{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    .bandeau-bouton svg{flex:0 0 auto;width:18px;height:18px;color:var(--faint);transition:transform .2s ease,color .15s;}
+    .bandeau-bouton:hover svg{color:var(--text);}
+    .bandeau.est-ouvert .bandeau-bouton svg{transform:rotate(180deg);}
+    .bandeau-progres{height:3px;background:#F1F2F4;}
+    .bandeau-progres span{display:block;width:0;height:100%;background:#C27C12;}
+    /* La liste s'ouvre en menu sous le bandeau, sur la largeur de la colonne */
+    .bandeau-liste{
+      position:absolute;left:0;right:0;top:calc(100% + 8px);
+      background:var(--bg);border:1px solid var(--line);border-radius:14px;
+      box-shadow:0 24px 48px -24px rgba(21,24,31,.3),0 2px 8px rgba(21,24,31,.06);
+      padding:8px;column-gap:8px;
+    }
+    .bandeau-liste a{
+      display:grid;grid-template-columns:28px minmax(0,1fr) auto;align-items:center;gap:10px;
+      padding:10px 14px;border:0;border-radius:9px;break-inside:avoid;
+      font-family:var(--f-display);font-size:15.5px;font-weight:650;line-height:1.6;color:var(--text);
+      transition:background-color .15s;
+    }
+    .bandeau-liste a:hover{background:var(--surface-2);}
+    .bandeau-liste small{font-family:var(--f-body);font-size:13.5px;font-weight:500;color:var(--faint);}
+    .bandeau-liste a[aria-current]{color:var(--accent);background:var(--accent-soft);}
+    .bandeau-liste a:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;}
+
+    /* Après un saut depuis le bandeau, le titre de la rubrique s'arrête 88 px sous le haut de l'écran */
+    section{padding-top:var(--d-sec-space);scroll-margin-top:max(0px, calc(88px - var(--d-sec-space)));}
+    /* Titre de rubrique centré sur son trait : ——— TITRE ——— */
+    .sec-label{
+      font-size:var(--d-sec-size);font-weight:var(--d-sec-weight);
+      letter-spacing:var(--d-sec-ls);color:var(--d-sec-color);
+      justify-content:center;align-items:center;text-align:center;column-gap:14px;
+      text-wrap:balance;
+      border-bottom:0;padding-bottom:0;margin-bottom:40px;
+    }
+    .sec-label::before,.sec-label::after{
+      content:"";flex:1 1 0;min-width:24px;
+      height:var(--d-sec-rule);background:var(--line-strong);
+    }
+    .sec-label .count{margin-left:0;}
+    .pill{font-size:17px;}
+
+    /* Le chiffre : le nombre au-dessus de son explication */
+    .figure{padding:44px 48px;}
+    .figure .big{font-size:var(--d-big-size);font-weight:900;letter-spacing:-.038em;color:#EAA648;margin-bottom:22px;text-align:center;}
+    .figure .cap{font-size:27px;font-weight:890;line-height:1.29;margin-bottom:22px;text-wrap:balance;text-align:center;}
+    .figure p{font-size:21px;color:#000000;}
+    .figure a{color:#8F5A0F;}
+
+    /* En-tête d'item « fil de couleur », au-dessus de « Ce qui se passe » : le trait longe
+       numéro, plateforme, titre et source, sur l'axe de la barre de l'encadré ambre */
+    .item-head:has(.t-tiktok){--tone:var(--p-tiktok);}
+    .item-head:has(.t-meta){--tone:var(--p-meta);}
+    .item-head:has(.t-youtube){--tone:var(--p-youtube);}
+    .item-head:has(.t-ai){--tone:var(--p-ai);}
+    .item-head:has(.t-market){--tone:var(--p-market);}
+    .item-head{
+      position:relative;flex-wrap:wrap;align-items:center;gap:0 10px;
+      padding-left:calc(var(--d-barre) + var(--d-fil-ecart));
+    }
+    .item-head::before{
+      content:"";position:absolute;left:0;top:0;bottom:4px;
+      width:var(--d-barre);background:var(--tone,var(--line-strong));
+    }
+    .item-head > div{display:contents;}
+    .num{
+      padding-top:0;min-width:0;
+      font-size:17px;font-weight:800;letter-spacing:.02em;color:var(--tone,var(--faint));
+    }
+    /* Petit filet entre le numéro et la plateforme : il remplace le point de la pastille */
+    .num::after{
+      content:"";display:inline-block;width:1px;height:11px;margin-left:10px;
+      vertical-align:-1px;background:var(--line-strong);
+    }
+    .item-head .pill::before{display:none;}
+    .item h3,.src-top{flex:0 0 100%;}
+    .item h3{
+      font-size:var(--d-h3-size);font-weight:var(--d-h3-weight);
+      line-height:var(--d-h3-lh);letter-spacing:var(--d-h3-ls);
+      margin-top:14px;text-wrap:pretty;
+    }
+    .src-top{font-size:16.5px;}
+    .src-top a{color:#8E590F;}
+
+    .item{padding-bottom:var(--d-item-gap);}
+    .item + .item{padding-top:var(--d-item-gap);}
+    .item-body{gap:var(--d-blk-gap);margin-top:var(--d-blk-gap);}
+    .blk{gap:var(--d-para-gap);}
+    .blk-label{
+      font-size:var(--d-label-size);font-weight:var(--d-label-weight);
+      letter-spacing:var(--d-label-ls);color:var(--d-label-color);
+    }
+    .item-body .blk > p:not(.blk-label):not(.quote),
+    .item-body ul.plain li{font-size:21.5px;}
+    .item-body ul.plain span{font-size:15.5px;}
+    .quote{font-size:19px;font-weight:550;}
+    .src-more{font-size:15px;margin-top:36px;}
+    .blk-action{
+      padding:var(--d-encadre-pad);background-color:#FFF8EB;
+      border-left-width:var(--d-barre);border-radius:0 18px 18px 0;
+    }
+
+    .empty{font-size:16px;text-align:center;}
+
+    .brief{padding-block:28px;}
+    .brief h4{font-size:var(--d-brief-h-size);text-wrap:pretty;}
+    .brief p:not(.lnk){font-size:var(--d-brief-p-size);line-height:1.71;}
+    .brief .lnk{font-size:15px;}
+
+    .tool{padding:38px 40px;}
+    /* Le badge passe sous le nom ; les deux lignes suivent --d-outil-align */
+    .tool-top{flex-direction:column;justify-content:center;align-items:var(--d-outil-align, flex-start);--d-outil-align:center;}
+    .tool h3{font-size:28px;text-align:center;}
+    .tool > p:not(.why){font-size:22px;}
+    .tool .why{font-size:21px;line-height:1.75;color:#18191B;}
+
+    .arch-card{padding:34px 36px;}
+    .arch-card h4{font-size:28px;text-align:center;}
+    /* « .arch-card » en préfixe : sinon la règle « .arch-card p » l'emporte sur les étiquettes */
+    .arch-card .lbl{font-size:18px;font-weight:770;letter-spacing:.151em;color:#D3884A;}
+    .arch-card p:not(.lbl):not(.trigger),
+    .arch-card ul.plain li{font-size:21px;color:#050C1A;}
+    .arch-card .trigger{font-size:16px;color:#010B1E;}
+    .path{font-size:17.5px;}
+
+    /* La date et l'événement occupent toute la ligne : leur alignement se règle dans l'atelier */
+    .watch li{flex-direction:column;gap:4px;align-items:stretch;padding-block:21px;border-bottom-width:2px;}
+    .watch .when{flex:none;font-size:22px;}
+    .watch .what{font-size:22px;color:#000000;}
+    .watch .what small{font-size:17.5px;}
+    .watch .src{font-size:15px;}
+
+    footer{font-size:14.5px;margin-top:88px;}
+
+    .to-top{
+      display:flex;align-items:center;justify-content:center;
+      position:fixed;z-index:30;right:28px;bottom:28px;
+      width:var(--d-top-size);height:var(--d-top-size);
+      padding:0;border-radius:50%;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+      border:1px solid var(--line-strong);
+      box-shadow:0 6px 18px rgba(21,24,31,.12),0 1px 3px rgba(21,24,31,.08);
+      color:var(--text);cursor:pointer;
+      opacity:0;visibility:hidden;transform:translateY(10px);
+      transition:opacity .2s ease,transform .2s ease,visibility 0s linear .2s,border-color .15s;
+    }
+    .to-top.is-visible{opacity:1;visibility:visible;transform:none;transition-delay:0s;}
+    .to-top:hover{border-color:var(--faint);}
+    .to-top svg{width:44%;height:44%;}
+    .to-top:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+  }
+
+  /* ═══════════ Ordinateur portable (de 521 à 1 679 px, dont le MacBook 13″ à 1 440 px) ═══════════
+     Réduit ou agrandit toute la page d'un coup, dans les mêmes proportions, comme le zoom du navigateur :
+     textes, pastilles, chiffres, marges, bandeau et largeur de la colonne.
+     Les écrans plus larges (écran externe 1 920 px) gardent les tailles du bloc ordinateur. */
+  @media (min-width:521px) and (max-width:1679px){
+    .wrap{zoom:var(--d-zoom-portable);}
+  }
+
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation:none!important;transition:none!important;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <h1>Newsletter 12/10/2026</h1>
+    <p class="meta"><span class="meta-bloc meta-duree"><span class="meta-horloge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" focusable="false" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="meta-valeur"><span class="meta-min">10 min</span><span class="meta-de-lecture"> de lecture</span></span><span class="meta-sep">&nbsp;–</span></span> <span class="meta-bloc meta-sujet"><span class="meta-valeur"><span class="meta-nom">Formats courts</span><span class="meta-dp">&nbsp;:</span> <span class="meta-themes"><span class="meta-theme"><span class="meta-bulle" aria-hidden="true"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" focusable="false" stroke-width="1.8"><path d="M4 10.5v3a1 1 0 0 0 1 1h2.2l5.3 4V5.5L7.2 9.5H5a1 1 0 0 0-1 1z"/><path d="M16 9a4 4 0 0 1 0 6"/><path d="M18.8 6.5a7.5 7.5 0 0 1 0 11"/></svg></span></span>Ads</span><span class="meta-et"> &amp; </span><span class="meta-theme"><span class="meta-bulle" aria-hidden="true"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" focusable="false" stroke-width="1.8"><path d="M12 21v-9"/><path d="M12 12C12 8 9.5 5.5 5 5.5c0 4.2 2.6 6.5 7 6.5z"/><path d="M12 10c0-3.6 2.3-6 6.5-6 0 3.9-2.4 6-6.5 6z"/></svg></span></span>Organique</span><span class="meta-et"> &amp; </span><span class="meta-theme"><span class="meta-bulle" aria-hidden="true"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" focusable="false" stroke-width="1.8"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L12 16.8l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg></span></span>Influence</span><span class="meta-et"> &amp; </span><span class="meta-theme"><span class="meta-bulle" aria-hidden="true"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" focusable="false" stroke-width="1.8"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><circle cx="12" cy="11.5" r="2.6" fill="currentColor" stroke="none"/><path d="M10.5 18.5h3"/></svg></span></span>UGC</span><span class="meta-et"> &amp; </span><span class="meta-theme"><span class="meta-bulle" aria-hidden="true"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" focusable="false" stroke-width="1.8"><path d="M11 3.5l1.9 5.1 5.1 1.9-5.1 1.9L11 17.5l-1.9-5.1L4 10.5l5.1-1.9z"/><path d="M18.5 15l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg></span></span>IA</span></span></span></span></p>
+  </header>
+
+  <nav class="toc" aria-label="Sommaire">
+    <div class="toc-inner">
+      <a href="#chiffre">📊 Chiffre</a>
+      <a href="#items">🗞️ Les 4 news</a>
+      <a href="#bref">🗞️ News en bref</a>
+      <a href="#outil">🛠️ Outil</a>
+      <a href="#archive">📓 Archive</a>
+      <a href="#surveiller">👀 Sorties à surveiller</a>
+    </div>
+  </nav>
+
+  <!-- Bandeau « où j'en suis » : il remplace les pastilles ci-dessus.
+       Sur téléphone comme sur ordinateur, il se place sous le titre et reste collé en haut pendant la lecture. -->
+  <nav class="bandeau" aria-label="Au programme">
+    <button class="bandeau-bouton" type="button" aria-expanded="false" aria-controls="bandeau-liste">
+      <span class="bandeau-libelle">Au programme · 6 rubriques</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="bandeau-progres" aria-hidden="true"><span></span></div>
+    <div class="bandeau-liste" id="bandeau-liste" hidden>
+      <a href="#chiffre"><span class="bandeau-emoji" aria-hidden="true">📊</span><span class="bandeau-nom">Le chiffre de la semaine</span><small>38 %</small></a>
+      <a href="#items"><span class="bandeau-emoji" aria-hidden="true">🗞️</span><span class="bandeau-nom">Les 4 news de la semaine</span><small>4 sujets</small></a>
+      <a href="#bref"><span class="bandeau-emoji" aria-hidden="true">🗞️</span><span class="bandeau-nom">Les news en bref</span><small>9 brèves</small></a>
+      <a href="#outil"><span class="bandeau-emoji" aria-hidden="true">🛠️</span><span class="bandeau-nom">Outil à tester</span><small>SynthID Detector</small></a>
+      <a href="#archive"><span class="bandeau-emoji" aria-hidden="true">📓</span><span class="bandeau-nom">Ce que j'archive</span><small>1 note</small></a>
+      <a href="#surveiller"><span class="bandeau-emoji" aria-hidden="true">👀</span><span class="bandeau-nom">Les sorties à surveiller</span><small>9 dates</small></a>
+    </div>
+  </nav>
+
+  <!-- ═══════════ CHIFFRE ═══════════ -->
+  <section id="chiffre">
+    <div class="sec-label">📊 Le chiffre de la semaine</div>
+    <div class="figure">
+      <div class="big">38&nbsp;%</div>
+      <div class="cap">des publications des influenceurs santé et bien être font la promotion d'un produit ou d'un service</div>
+      <p>Selon le Pew Research Center, qui a analysé 535&nbsp;512 publications Instagram, TikTok et YouTube de 6&nbsp;334 influenceurs santé et bien être, entre février et avril 2026.</p>
+      <p>Un peu plus de la moitié de ces publications (54&nbsp;%) parlent d'habitudes de vie saine&nbsp;: sport, nutrition, sommeil. Un tiers (34&nbsp;%) aborde un sujet médical.</p>
+      <p>Ce que ça dit pour ton métier&nbsp;: la quasi totalité de ces influenceurs placent au moins une fois un produit, et un tiers d'entre eux le font dans la majorité de leurs publications.</p>
+      <p>Un repère utile avant de juger une fréquence de placement de produit « normale ».</p>
+      <p><a href="https://www.pewresearch.org/data-labs/2026/10/07/what-do-health-and-wellness-influencers-post-about/">Pew Research Center, ce que postent les influenceurs santé et bien être</a></p>
+    </div>
+  </section>
+
+  <!-- ═══════════ ITEMS ═══════════ -->
+  <section id="items">
+    <div class="sec-label">🗞️ Les 4 news de la semaine</div>
+
+    <div class="items">
+
+      <!-- 01 -->
+      <article class="item">
+        <div class="item-head">
+          <span class="num">01</span>
+          <div>
+            <span class="pill t-meta">Meta · Facebook</span>
+            <h3>Facebook teste un démarrage à 100&nbsp;% Reels en Inde, et range le fil classique dans un second onglet</h3>
+            <p class="src-top">→ <a href="https://techcrunch.com/2026/10/06/facebook-tests-going-reels-first-in-india/">TechCrunch</a></p>
+          </div>
+        </div>
+
+        <div class="item-body">
+          <div class="blk">
+            <p class="blk-label">Ce qui se passe</p>
+            <p>Repéré le 6 octobre par TechCrunch&nbsp;: Meta teste en Inde une version de Facebook qui ouvre l'application directement sur un fil plein écran de Reels, plutôt que sur le fil classique.</p>
+            <p>Le test avait été annoncé en juillet par le patron de Facebook, pour des pays à forte consommation vidéo hors des États Unis. L'Indonésie est aussi concernée, selon Meta.</p>
+            <p>Le fil classique reste disponible, mais dans un second onglet, et chacun peut revenir à l'ancienne version.</p>
+            <p>L'Inde est déjà le terrain d'essai habituel de Meta pour la vidéo courte&nbsp;: Instagram y avait lancé son onglet Reels dès 2020, juste après l'interdiction de TikTok dans le pays.</p>
+          </div>
+
+          <div class="blk">
+            <p class="blk-label">Pourquoi ça te concerne</p>
+            <p>Si l'essai est généralisé, le premier écran d'une marque sur Facebook devient une vidéo, pas un post classique. Les visuels fixes perdent en visibilité immédiate dès l'ouverture de l'application.</p>
+            <p>Meta affirme que les jeunes adultes passent environ 60&nbsp;% de leur temps sur Facebook à regarder des vidéos, comme sur Instagram et TikTok.</p>
+          </div>
+
+          <div class="blk blk-action">
+            <p class="blk-label">Ce que tu peux en faire</p>
+            <p>Pour une marque qui pousse encore des visuels fixes sur Facebook, c'est le moment de tester en priorité un format vidéo court et vertical, même pour un simple post produit.</p>
+          </div>
+        </div>
+
+        <p class="src-more">Aussi&nbsp;: <a href="https://passionfru.it/facebook-widens-reels-first-test-in-india-pushing-the-news-feed-to-a-second-tab-166182/">Passionfruit, le test parallèle sur Instagram</a></p>
+      </article>
+
+      <!-- 02 -->
+      <article class="item">
+        <div class="item-head">
+          <span class="num">02</span>
+          <div>
+            <span class="pill t-market">Formats courts · Streaming</span>
+            <h3>Vurt veut faire de la minisérie verticale un genre à part, jusque sur grand écran</h3>
+            <p class="src-top">→ <a href="https://www.theverge.com/entertainment/1008720/vurt-microdramas-verticals-interview-hilmon-sorey">The Verge</a></p>
+          </div>
+        </div>
+
+        <div class="item-body">
+          <div class="blk">
+            <p class="blk-label">Ce qui se passe</p>
+            <p>Dans un entretien publié le 11 octobre par The Verge, le cofondateur de Vurt, Hilmon Sorey, présente le virage télé de sa plateforme de minidramas verticaux.</p>
+            <p>Lancé en mars, Vurt est passé de 10&nbsp;000 à 675&nbsp;000 utilisateurs. L'application propose 3&nbsp;500 épisodes sur plus de 100 séries, financées par la publicité et gratuites pour le public.</p>
+            <p>Contrairement à des rivaux comme DramaBox ou ReelShort, la plupart des séries de Vurt sont tournées avec de vrais acteurs et équipes, pas générées par IA, selon l'entreprise.</p>
+            <p>Les créateurs signent des accords de licence à 50&nbsp;% de partage des revenus, et un projet validé peut être mis en ligne en quelques jours.</p>
+          </div>
+
+          <div class="blk">
+            <p class="blk-label">Pourquoi ça te concerne</p>
+            <p>Vurt prend le contre pied de la vidéo verticale pensée seulement pour le téléphone&nbsp;: elle mise sur l'Apple TV et l'Android TV, avec de la haute définition et un vrai son.</p>
+            <p>Sorey insiste sur un point utile pour écrire un format court&nbsp;: une accroche dès la première seconde, puis chaque épisode qui se termine sur un cliffhanger vers le suivant.</p>
+          </div>
+
+          <div class="blk blk-action">
+            <p class="blk-label">Ce que tu peux en faire</p>
+            <p>Regarde un épisode de Vurt ou d'un concurrent pour étudier la construction de l'accroche et du cliffhanger&nbsp;: la méthode s'applique directement à une série de contenus de marque.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 03 -->
+      <article class="item">
+        <div class="item-head">
+          <span class="num">03</span>
+          <div>
+            <span class="pill t-market">Influence · Deals créateurs</span>
+            <h3>Les plus gros créateurs réduisent leurs partenariats de marque et réclament de l'équité</h3>
+            <p class="src-top">→ <a href="https://digiday.com/marketing/future-of-marketing-briefing-why-top-creators-are-taking-fewer-brand-deals/">Digiday</a></p>
+          </div>
+        </div>
+
+        <div class="item-body">
+          <div class="blk">
+            <p class="blk-label">Ce qui se passe</p>
+            <p>Lors de l'Advertising Week New York, plusieurs créateurs ont expliqué, selon Digiday (9 octobre), pourquoi ils acceptent moins de partenariats, mais mieux rémunérés.</p>
+            <p>La créatrice Alix Earle, 14 millions d'abonnés au total, préfère travailler avec « cinq ou six marques plutôt que cent » chaque année, et négocie désormais des parts d'équité sur certains deals.</p>
+            <p>Jordan Howlett est devenu « chief content officer » de la marque Blenders Eyewear&nbsp;: bureau, crédit de réalisation, et un mot à dire sur les produits.</p>
+            <p>Le créateur Kevin Cooney refuse les campagnes qu'il juge peu performantes, et propose d'autres créateurs à la place.</p>
+          </div>
+
+          <div class="blk">
+            <p class="blk-label">Pourquoi ça te concerne</p>
+            <p>La relation marque créateur devient une discussion de long terme, parfois avec de l'équité à la clé, plutôt qu'un simple post ponctuel payé au forfait.</p>
+            <p>Un partenariat perçu comme acheté peut coûter la confiance de l'audience d'un créateur&nbsp;: les studios qui produisent du contenu avec des créateurs trient désormais sur cette fidélité avant de signer.</p>
+          </div>
+
+          <div class="blk blk-action">
+            <p class="blk-label">Ce que tu peux en faire</p>
+            <p>Avant de proposer un partenariat ponctuel à un gros créateur, prépare une alternative de collaboration plus longue&nbsp;: coécriture, accès au produit en amont, ou petite participation au résultat.</p>
+          </div>
+        </div>
+
+        <p class="src-more">Aussi&nbsp;: <a href="https://digiday.com/media/as-creators-increasingly-move-into-hollywood-deal-terms-can-put-their-ip-at-risk/">Digiday, les risques de propriété intellectuelle dans les deals Hollywood créateurs</a></p>
+      </article>
+
+      <!-- 04 -->
+      <article class="item">
+        <div class="item-head">
+          <span class="num">04</span>
+          <div>
+            <span class="pill t-ai">IA · Meta</span>
+            <h3>Meta étend l'IA à toute la chaîne publicitaire, de la création au paiement</h3>
+            <p class="src-top">→ <a href="https://www.blogdumoderateur.com/meta-etend-ia-toute-chaine-publicitaire/">Blog du Modérateur</a></p>
+          </div>
+        </div>
+
+        <div class="item-body">
+          <div class="blk">
+            <p class="blk-label">Ce qui se passe</p>
+            <p>Présenté le 7 octobre à l'Advertising Week New York, selon le Blog du Modérateur&nbsp;: l'assistant de Meta AI, intégré à Ads Manager, gagne une mémoire plus large et les analyses créatives d'Ads Creative Studio.</p>
+            <p>Toujours en test&nbsp;: piloter une campagne en langage courant, pour créer, générer des visuels ou ajuster un budget, avec validation avant chaque action.</p>
+            <p>Ads Creative Studio génère désormais des concepts de vidéo retouchables (accroche, audio, durée des plans, sous titres), un espace déployé plus largement auprès des annonceurs.</p>
+            <p>Meta teste aussi l'achat directement dans ses messageries&nbsp;: paiement via Shopify sur Messenger, puis cet automne avec Adyen, PayPal et Stripe dans Meta AI.</p>
+          </div>
+
+          <div class="blk">
+            <p class="blk-label">Pourquoi ça te concerne</p>
+            <p>Selon Meta, les annonceurs qui suivent les recommandations de son assistant obtiennent « 5&nbsp;% de conversions de plus », à coût égal&nbsp;: un chiffre de plateforme, donc à vérifier toi même.</p>
+            <p>Aucune date n'est annoncée pour la France, et Muse, l'agent personnel de Meta, reste indisponible en Europe.</p>
+          </div>
+
+          <div class="blk blk-action">
+            <p class="blk-label">Ce que tu peux en faire</p>
+            <p>Si tu gères des campagnes Meta, teste dès maintenant les analyses créatives d'Ads Creative Studio sur une campagne en cours, pour les comparer à ton propre jugement.</p>
+          </div>
+        </div>
+
+        <p class="src-more">Aussi&nbsp;: <a href="https://www.marketingdive.com/news/meta-introduces-new-ai-powered-tools-at-advertising-week/832517/">Marketing Dive</a></p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ═══════════ EN BREF ═══════════ -->
+  <section id="bref">
+    <div class="sec-label">🗞️ Les news en bref <span class="count">9</span></div>
+
+    <div class="briefs">
+
+      <div class="brief">
+        <span class="pill t-ai">Médias · IA</span>
+        <h4>Radio France rejoint la coalition internationale SPUR sur l'IA</h4>
+        <p><em>Suite du numéro du 05/10.</em> Annoncé le 8 octobre&nbsp;: Radio France adhère à SPUR, la coalition de médias (BBC, Guardian, Financial Times) qui veut encadrer l'usage de leurs contenus par l'IA.</p>
+        <p>Le standard de télémétrie de SPUR, publié début septembre, doit permettre aux médias de mesurer comment l'IA utilise leurs articles, avant de négocier une rémunération.</p>
+        <p class="lnk"><a href="https://fr.themedialeader.com/radio-france-rejoint-la-coalition-internationale-spur-sur-lia-et-lethique/">The Media Leader FR</a></p>
+      </div>
+
+      <div class="brief">
+        <span class="pill t-tiktok">TikTok · BookTok</span>
+        <h4>TikTok dévoile son premier palmarès européen BookTok de l'année</h4>
+        <p>Le roman « Fourth Wing » de Rebecca Yarros remporte cette première édition, basée sur les discussions in app et les ventes en librairie, selon Social Media Today (8 octobre).</p>
+        <p>TikTok affirme avoir généré 50 millions de ventes de livres en Europe en 2025, et que 49&nbsp;% des utilisateurs BookTok ont acheté un livre grâce à la plateforme.</p>
+        <p class="lnk"><a href="https://www.socialmediatoday.com/news/tiktok-announces-its-first-european-bestseller-of-the-year/832571/">Social Media Today</a></p>
+      </div>
+
+      <div class="brief">
+        <span class="pill t-market">LinkedIn · Étude</span>
+        <h4>Sur LinkedIn, un dirigeant pèse presque 29 fois plus qu'une page de marque</h4>
+        <p>Selon une étude ExComm, VML, Ogilvy et Burson citée par The Media Leader FR (9 octobre), un dirigeant pèse 28,8 fois plus par impression qu'une page entreprise sur LinkedIn.</p>
+        <p>19 comités exécutifs du CAC 40 figurent dans le top 40 européen, loin devant les comités allemands et britanniques.</p>
+        <p class="lnk"><a href="https://fr.themedialeader.com/linkedin-les-dirigeants-du-cac-40-surclassent-les-pages-corporate-de-leur-entreprise/">The Media Leader FR</a></p>
+      </div>
+
+      <div class="brief">
+        <span class="pill t-market">LinkedIn · IA</span>
+        <h4>LinkedIn détaille sa chasse au contenu IA de basse qualité</h4>
+        <p>Selon Social Media Today (8 octobre), un million de personnes ont signalé un contenu « AI slop » en moins de trois semaines depuis le lancement du bouton de signalement, en août.</p>
+        <p>LinkedIn dit détecter ces contenus avec une précision de 94&nbsp;% sur les publications qui dépassent le réseau direct, et avoir réduit leur visibilité de 40&nbsp;%.</p>
+        <p class="lnk"><a href="https://www.socialmediatoday.com/news/linkedin-exec-offers-insight-into-the-battle-against-ai-slop/832576/">Social Media Today</a></p>
+      </div>
+
+      <div class="brief">
+        <span class="pill t-market">Influence · Advertising Week</span>
+        <h4>Le défi des 100 millions de dollars de deals créateurs serait déjà atteint</h4>
+        <p><em>Suite du numéro du 05/10.</em> Selon Digiday (6 octobre), Dhar Mann affirme que les promesses d'achat des marques dépassent déjà les 100 millions de dollars visés à l'Advertising Week New York.</p>
+        <p>Il précise que rien n'est signé pour l'instant&nbsp;: les budgets créateurs du quatrième trimestre sont le plus souvent votés depuis le début de l'année.</p>
+        <p class="lnk"><a href="https://digiday.com/marketing/dhar-manns-100m-awny-deal-target-for-creators-is-already-pledged-so-he-says/">Digiday</a></p>
+      </div>
+
+      <div class="brief">
+        <span class="pill t-ai">IA · Créateurs</span>
+        <h4>Les clones IA de créateurs se banalisent, avec des règles encore floues</h4>
+        <p>Selon Passionfruit (10 octobre), YouTube propose désormais des avatars IA filigranés pour les créateurs, et Meta laisse depuis 2024 des créateurs américains répondre à leurs messages avec une version IA d'eux mêmes.</p>
+        <p>Les premiers clones vocaux, lancés en 2023, ont souvent disparu quand la start up qui les hébergeait a fermé&nbsp;: la leçon porte sur qui garde le contrôle du clone.</p>
+        <p class="lnk"><a href="https://passionfru.it/creator-ai-clones-166222/">Passionfruit</a></p>
+      </div>
+
+      <div class="brief">
+        <span class="pill t-ai">IA · OpenAI</span>
+        <h4>ChatGPT teste des publicités avec image et de nouveaux outils de mesure</h4>
+        <p>Selon Digiday (5 octobre), OpenAI va tester ce mois ci des publicités avec image pendant la génération d'images dans ChatGPT, toujours étiquetées comme telles et séparées du résultat créé.</p>
+        <p>Côté mesure, OpenAI ajoute Kochava et dix autres partenaires pour relier une campagne à des résultats concrets, un point faible souvent cité par les annonceurs.</p>
+        <p class="lnk"><a href="https://digiday.com/marketing/openai-moves-to-make-chatgpt-ads-more-measurable-and-more-visual/">Digiday</a></p>
+      </div>
+
+      <div class="brief">
+        <span class="pill t-meta">Meta · Justice</span>
+        <h4>101 médias français réclament 1,4 milliard d'euros à Meta</h4>
+        <p>Révélé par L'Informé et rapporté par The Media Leader FR (11 octobre)&nbsp;: Le Figaro, TF1, Radio France et 98 autres groupes accusent Meta d'avoir capté le marché publicitaire grâce à un ciblage qui ignore le RGPD.</p>
+        <p>La plainte, déposée le 30 avril à Paris, s'appuie sur des sanctions déjà prononcées contre Meta par le régulateur irlandais.</p>
+        <p class="lnk"><a href="https://fr.themedialeader.com/donnees-personnelles-101-medias-francais-reclament-14-milliard-deuros-a-meta/">The Media Leader FR</a></p>
+      </div>
+
+      <div class="brief">
+        <span class="pill t-meta">Threads · Communauté</span>
+        <h4>Threads récompense ses meilleures publications avec un programme Gems</h4>
+        <p>Selon Social Media Today (8 octobre), Threads sélectionne désormais automatiquement les publications et réponses originales qui apportent de la valeur ou lancent une vraie discussion, pour les mettre en avant.</p>
+        <p class="lnk"><a href="https://www.socialmediatoday.com/news/threads-recognizes-top-posts-with-in-app-gems-program/832577/">Social Media Today</a></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════ OUTIL ═══════════ -->
+  <section id="outil">
+    <div class="sec-label">🛠️ Outil à tester</div>
+    <div class="tool">
+      <div class="tool-top">
+        <h3>SynthID Detector</h3>
+        <span class="verdict">À surveiller</span>
+      </div>
+      <p>Déployé mondialement le 7 octobre par Google DeepMind&nbsp;: un portail gratuit qui analyse une image, une vidéo ou un fichier audio pour y chercher le filigrane invisible SynthID.</p>
+      <p>L'outil détecte aussi les contenus de partenaires comme OpenAI, Nvidia et Kakao. Google affirme avoir déjà marqué plus de 180 milliards d'images et de vidéos depuis 2023.</p>
+      <p class="why">Pourquoi «&nbsp;à surveiller&nbsp;»&nbsp;: aucun test indépendant n'est encore paru. Tout ce qui précède vient de l'annonce de Google, reprise par le Blog du Modérateur.</p>
+      <p class="why">Une absence de signal ne prouve rien&nbsp;: un contenu peut venir d'un modèle non partenaire, ou avoir été retouché au point d'effacer le filigrane.</p>
+      <p class="why"><strong>Ce qu'il reste à vérifier&nbsp;:</strong></p>
+      <ul class="plain">
+        <li>la fiabilité face à une image fortement compressée ou recadrée, comme celles qui circulent sur les réseaux</li>
+        <li>le comportement sur une vidéo montée à partir de plusieurs sources, dont une seule générée par IA</li>
+        <li>la prise en charge des contenus Apple, annoncée mais pas encore active</li>
+      </ul>
+      <p class="why">Pour l'essayer&nbsp;: <a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/synth-id-ai-content/">l'annonce de Google DeepMind</a>, puis le portail SynthID Detector, accessible avec un compte Google, Apple ou ChatGPT.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════ ARCHIVE ═══════════ -->
+  <section id="archive">
+    <div class="sec-label">📓 Ce que j'archive</div>
+    <div class="arch">
+
+      <div class="arch-card">
+        <h4>Ce qui est obligatoire et interdit dans un partenariat d'influence en France</h4>
+
+        <div class="arch-field">
+          <p class="lbl">Contexte</p>
+          <p>La loi du 9 juin 2023 fait de la France le premier pays d'Europe doté d'un texte propre à l'influence commerciale. Elle définit les statuts d'influenceur et d'agent d'influenceur.</p>
+          <p>Un avocat spécialisé, Alexandre Bigot Joly, en détaille le fonctionnement dans un podcast Swello repris par le Blog du Modérateur (6 octobre)&nbsp;: transparence, sanctions, et risques posés par l'IA générative sur le droit d'auteur.</p>
+          <p>C'est un texte de loi, pas une actualité de plateforme&nbsp;: il ne change pas d'une semaine à l'autre.</p>
+        </div>
+
+        <div class="arch-field">
+          <p class="lbl">Pourquoi ça mérite une note permanente</p>
+          <p>Les règles de transparence, les produits interdits en partenariat et les sanctions reviennent dans presque chaque brief d'influence. Elles sont stables depuis 2023, contrairement aux annonces hebdomadaires des plateformes.</p>
+        </div>
+
+        <div class="arch-field">
+          <p class="lbl">Recommandation</p>
+          <p>À écrire maintenant.</p>
+          <p>Le cadre légal (statuts, obligations, sanctions) est fixé depuis 2023 et ne devrait pas bouger avant une nouvelle loi.</p>
+        </div>
+
+        <div class="arch-field">
+          <p class="lbl">Ce que la note ajouterait</p>
+          <ul class="plain">
+            <li>La liste des produits interdits en partenariat, dont la chirurgie esthétique, les cryptomonnaies et les sachets de nicotine</li>
+            <li>La différence entre un partenariat classique et un contenu UGC (User Generated Content), qui échappe à la loi</li>
+            <li>Les bonnes pratiques contractuelles&nbsp;: écrit systématique, vérification de l'annonceur, durée encadrée d'une exclusivité</li>
+            <li>Les points de vigilance posés par l'IA générative&nbsp;: droit d'auteur, clonage vocal, campagnes Fake Out of Home</li>
+          </ul>
+        </div>
+
+        <div class="arch-field">
+          <p class="lbl">Chemin</p>
+          <div class="path">(nouveau dossier, à créer)</div>
+        </div>
+
+        <p class="trigger">→ Dis <code>on fait la note cadre légal</code> et on la construit.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════ À SURVEILLER ═══════════ -->
+  <section id="surveiller">
+    <div class="sec-label">👀 Les sorties à surveiller</div>
+    <ul class="watch">
+      <li>
+        <span class="when">Octobre 2026</span>
+        <span class="what">Les pubs Netflix « à la pause » achetables automatiquement
+          <small>Via l'achat programmatique et les plateformes partenaires.</small>
+          <span class="src"><a href="https://fr.themedialeader.com/netflix-se-lance-dans-la-publicite-dans-9-nouveaux-pays/">The Media Leader FR</a></span>
+        </span>
+      </li>
+      <li>
+        <span class="when">Octobre 2026</span>
+        <span class="what">Première réunion du comité consultatif IA de SPUR
+          <small>Pour fixer comment OpenAI, Google ou Meta appliqueront le nouveau standard de traçage des contenus.</small>
+          <span class="src"><a href="https://digiday.com/media/spur-publishes-ai-content-tracking-standard-pitches-openai-and-google-to-join-advisory-board/">Digiday</a></span>
+        </span>
+      </li>
+      <li>
+        <span class="when">Fin 2026</span>
+        <span class="what">L'affiliation YouTube Shopping dans 35 pays
+          <small>Les créateurs pourront taguer des produits dans leurs vidéos, lives et Shorts.</small>
+          <span class="src"><a href="https://blog.youtube/news-and-events/made-on-youtube-creator-monetization-shopping/">YouTube Blog</a></span>
+        </span>
+      </li>
+      <li>
+        <span class="when">Début 2027</span>
+        <span class="what">Le montage conversationnel de YouTube dans Shorts et YouTube Create
+          <small>Annoncé le 23 septembre sans date&nbsp;; TechCrunch avance « début d'année prochaine ».</small>
+          <span class="src"><a href="https://techcrunch.com/2026/09/30/instagram-rolls-out-an-ai-video-assistant-for-creators/">TechCrunch</a></span>
+        </span>
+      </li>
+      <li>
+        <span class="when">Début 2027</span>
+        <span class="what">Creator Discovery ouvert à toutes les marques sur LinkedIn
+          <small>Aujourd'hui en test dans la Creator Marketplace.</small>
+          <span class="src"><a href="https://www.linkedin.com/business/marketing/blog/linkedin-ads/how-b2b-creator-marketing-builds-buyer-trust-on-linkedin">LinkedIn Marketing Blog</a></span>
+        </span>
+      </li>
+      <li>
+        <span class="when">2027</span>
+        <span class="what">L'accès en libre service à Discord Ads Manager
+          <small>Pour l'instant réservé à des annonceurs sélectionnés par Discord.</small>
+          <span class="src"><a href="https://www.marketingdive.com/news/discord-steps-up-play-for-mobile-advertisers-with-rewarded-video-product/831808/">Marketing Dive</a></span>
+        </span>
+      </li>
+      <li>
+        <span class="when">2027</span>
+        <span class="what">Le démarrage Reels élargi aux États Unis sur Facebook
+          <small>Pour l'instant testé en Inde et en Indonésie.</small>
+          <span class="src"><a href="https://techcrunch.com/2026/10/06/facebook-tests-going-reels-first-in-india/">TechCrunch</a></span>
+        </span>
+      </li>
+      <li>
+        <span class="when">1<sup>er</sup> févr. 2027</span>
+        <span class="what">Seuil de 10M vues qualifiées sur 90 jours pour le Shorts Creator Pool
+          <small>20M pour les nouvelles chaînes. Modalités de compensation encore non publiées.</small>
+          <span class="src"><a href="https://blog.youtube/news-and-events/youtube-partner-program-updates-2027-new-opportunities-earn/">YouTube Blog</a></span>
+        </span>
+      </li>
+      <li>
+        <span class="when">1<sup>er</sup> mars 2027</span>
+        <span class="what">L'offre Netflix avec publicité dans 9 nouveaux pays
+          <small>Dont la Belgique, la Suisse et les Pays-Bas.</small>
+          <span class="src"><a href="https://fr.themedialeader.com/netflix-se-lance-dans-la-publicite-dans-9-nouveaux-pays/">The Media Leader FR</a></span>
+        </span>
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    <p><strong>Newsletter Content-AI-Influence</strong> · numéro du 12/10/2026.</p>
+    <p>Infos publiées du 5 au 12 octobre 2026. Sources FR et EN, restituées en français.</p>
+  </footer>
+
+  <button class="to-top" type="button" aria-label="Revenir en haut de la page">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+</div>
+
+<script>
+  (function(){
+    var btn = document.querySelector('.to-top');
+    if (!btn) return;
+    var pending = false;
+    function update(){
+      pending = false;
+      btn.classList.toggle('is-visible', window.scrollY > window.innerHeight);
+    }
+    window.addEventListener('scroll', function(){
+      if (!pending){ pending = true; requestAnimationFrame(update); }
+    }, {passive:true});
+    update();
+    btn.addEventListener('click', function(){
+      var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({top:0, behavior: calm ? 'auto' : 'smooth'});
+      var h1 = document.querySelector('h1');
+      if (h1){ h1.setAttribute('tabindex', '-1'); h1.focus({preventScroll:true}); }
+    });
+  })();
+
+  // Bandeau « où j'en suis » : rubrique en cours, progression, liste des rubriques
+  (function(){
+    var bandeau = document.querySelector('.bandeau');
+    if (!bandeau) return;
+    var bouton = bandeau.querySelector('.bandeau-bouton');
+    var libelle = bandeau.querySelector('.bandeau-libelle');
+    var barre = bandeau.querySelector('.bandeau-progres span');
+    var liste = bandeau.querySelector('.bandeau-liste');
+    var liens = Array.prototype.slice.call(liste.querySelectorAll('a[href^="#"]'));
+    var rubriques = liens.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+    var accueil = 'Au programme · ' + liens.length + ' rubriques';
+    document.documentElement.classList.add('avec-bandeau');
+
+    function deplier(oui){
+      liste.hidden = !oui;
+      bandeau.classList.toggle('est-ouvert', oui);
+      bouton.setAttribute('aria-expanded', oui ? 'true' : 'false');
+    }
+    bouton.addEventListener('click', function(){ deplier(liste.hidden); });
+    liens.forEach(function(a){ a.addEventListener('click', function(){ deplier(false); }); });
+    document.addEventListener('click', function(e){
+      if (!liste.hidden && !bandeau.contains(e.target)) deplier(false);
+    });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && !liste.hidden){ deplier(false); bouton.focus(); }
+    });
+
+    var actif = null, attente = false;
+    function mesurer(){
+      attente = false;
+      // Une rubrique devient « en cours » quand son haut passe juste sous le bandeau
+      // (hauteur mesurée à l'écran : elle tient compte de la taille de tout le contenu)
+      var seuil = bandeau.getBoundingClientRect().height + 48, i = -1;
+      rubriques.forEach(function(r, k){ if (r && r.getBoundingClientRect().top <= seuil) i = k; });
+      if (i !== actif){
+        actif = i;
+        libelle.textContent = i < 0 ? accueil :
+          liens[i].querySelector('.bandeau-emoji').textContent + ' ' +
+          liens[i].querySelector('.bandeau-nom').textContent + ' · ' + (i + 1) + '/' + liens.length;
+        liens.forEach(function(a, k){
+          if (k === i) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current');
+        });
+      }
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      barre.style.width = (max > 0 ? Math.min(100, window.scrollY / max * 100) : 0) + '%';
+    }
+    window.addEventListener('scroll', function(){
+      if (!attente){ attente = true; requestAnimationFrame(mesurer); }
+    }, {passive:true});
+    window.addEventListener('resize', mesurer);
+    mesurer();
+  })();
+</script>
+
+
+</body>
+</html>
