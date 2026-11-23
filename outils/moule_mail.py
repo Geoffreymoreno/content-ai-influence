@@ -31,6 +31,8 @@ S = {
  'progT':  D + 'font-size:15px;font-weight:800;color:#15181F;margin:0 0 6px;',
  'progL':  D + 'font-size:14.5px;font-weight:650;line-height:1.4;color:#15181F;padding:7px 0;',
  'progN':  D + 'font-size:12.5px;font-weight:500;line-height:1.4;color:#8B93A1;padding:7px 0 7px 10px;text-align:right;white-space:nowrap;',
+ 'progL2': D + 'font-size:14.5px;font-weight:650;line-height:1.4;color:#15181F;padding:7px 0 1px;',
+ 'progS':  D + 'font-size:12.5px;font-weight:500;line-height:1.4;color:#8B93A1;padding:0 0 7px;text-align:left;',
  'sec':    'padding:46px 0 0;',
  'secL':   D + 'font-size:14.5px;font-weight:800;line-height:1.3;letter-spacing:0.08em;text-transform:uppercase;color:#15181F;padding:0 12px;white-space:nowrap;text-align:center;',
  'trait':  'height:2px;line-height:2px;font-size:0;background-color:#CDD2DA;',
@@ -143,8 +145,17 @@ entete = (f'<tr><td{st("mast")}><h1{st("h1")}>{titre}</h1>'
           f'<p{st("meta")}><span{st("metaN")}>Formats courts</span>&nbsp;&nbsp;·&nbsp;&nbsp;⏱ 10 min de lecture</p>'
           + T(f'<tr>{bulles}</tr>', ' style="max-width:380px;" align="center"') + '</td></tr>')
 
-prog = ''.join(f'<tr><td width="28"{st("progL")}>{x.select_one(".bandeau-emoji").get_text()}</td><td{st("progL")}>{x.select_one(".bandeau-nom").get_text()}</td>'
-               f'<td{st("progN")}>{x.small.get_text()}</td></tr>' for x in src.select('.bandeau-liste a'))
+# Un repère court (« 94 % », « 5 sujets ») reste à droite, sur une ligne.
+# Un repère long (le titre de l'outil, souvent une phrase) passe sous le nom de la rubrique, sur toute la largeur :
+# à droite et sans retour à la ligne, il écrasait les noms des rubriques contre le bord gauche (numéros du 26/10 au 23/11/2026).
+REPERE_COURT = 18
+def ligne_prog(x):
+    emo, nom, rep = x.select_one(".bandeau-emoji").get_text(), x.select_one(".bandeau-nom").get_text(), x.small.get_text().strip()
+    if len(rep) <= REPERE_COURT:
+        return f'<tr><td width="28" valign="top"{st("progL")}>{emo}</td><td valign="top"{st("progL")}>{nom}</td><td valign="top"{st("progN")}>{rep}</td></tr>'
+    return (f'<tr><td width="28" valign="top"{st("progL2")}>{emo}</td><td colspan="2" valign="top"{st("progL2")}>{nom}</td></tr>'
+            f'<tr><td width="28"></td><td colspan="2" valign="top"{st("progS")}>{rep}</td></tr>')
+prog = ''.join(ligne_prog(x) for x in src.select('.bandeau-liste a'))
 programme = f'<tr><td><div{st("prog")}><p{st("progT")}>Au programme · {len(src.select(".bandeau-liste a"))} rubriques</p>{T(prog)}</div></td></tr>'
 
 # ─── Rubriques ───
