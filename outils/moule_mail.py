@@ -71,7 +71,6 @@ S = {
  'verd':   'text-align:center;margin:0 0 18px;',
  'verdS':  D + 'display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.11em;text-transform:uppercase;color:#047857;background-color:#ECF8F3;border:1px solid #9FD4BE;border-radius:999px;padding:4px 11px;white-space:nowrap;',
  'toolP':  'font-size:16.5px;line-height:1.7;color:#2C313C;margin:0 0 14px;',
- 'why':    'font-size:15px;line-height:1.75;color:#18191B;margin:0 0 14px;',
  'arch':   'background-color:#FAFAFB;border:1px solid #E7E9ED;border-radius:8px;padding:24px 22px 20px;',
  'archGap':'height:20px;line-height:20px;font-size:0;',
  'archH':  D + 'font-size:19px;font-weight:700;line-height:1.3;color:#15181F;margin:0 0 20px;text-align:center;',
@@ -137,13 +136,13 @@ def paras(blk, action=False):
 titre = src.h1.get_text()
 themes = [t.get_text().strip() for t in src.select('.meta-theme')]
 EMO = {'Ads':'📣', 'Organique':'🌱', 'Influence':'🤝', 'UGC':'🎥', 'IA':'🤖'}
-bulle = lambda e: (f'<table cellpadding="0" cellspacing="0" border="0" align="center"><tr><td width="52" height="52" align="center" valign="middle" bgcolor="#C27C12" style="border-radius:50%;">'
-                   f'<table cellpadding="0" cellspacing="0" border="0"><tr><td width="42" height="42" align="center" valign="middle" bgcolor="#FBF4E6" '
-                   f'style="border:2px solid #FFFFFF;border-radius:50%;font-size:20px;line-height:42px;">{e}</td></tr></table></td></tr></table>')
-bulles = ''.join(f'<td width="20%" align="center" valign="top" style="padding:0 2px;">{bulle(EMO.get(t, "•"))}<div{st("theme")}>{t}</div></td>' for t in themes)
+bulle = lambda e: (f'<table width="52" cellpadding="0" cellspacing="0" border="0" align="center" style="width:52px;"><tr><td width="52" height="52" align="center" valign="middle" bgcolor="#C27C12" style="width:52px;height:52px;border-radius:50%;">'
+                   f'<table width="46" cellpadding="0" cellspacing="0" border="0" style="width:46px;"><tr><td width="42" height="42" align="center" valign="middle" bgcolor="#FBF4E6" '
+                   f'style="width:42px;height:42px;border:2px solid #FFFFFF;border-radius:50%;font-size:20px;line-height:42px;">{e}</td></tr></table></td></tr></table>')
+bulles = ''.join(f'<td width="20%" align="center" valign="top" style="width:20%;padding:0 2px;">{bulle(EMO.get(t, "•"))}<div{st("theme")}>{t}</div></td>' for t in themes)
 entete = (f'<tr><td{st("mast")}><h1{st("h1")}>{titre}</h1>'
           f'<p{st("meta")}><span{st("metaN")}>Formats courts</span>&nbsp;&nbsp;·&nbsp;&nbsp;⏱ 10 min de lecture</p>'
-          + T(f'<tr>{bulles}</tr>', ' style="max-width:380px;" align="center"') + '</td></tr>')
+          + T(f'<tr>{bulles}</tr>', ' style="width:100%;max-width:380px;" align="center"') + '</td></tr>')
 
 # Un repère court (« 94 % », « 5 sujets ») reste à droite, sur une ligne.
 # Un repère long (le titre de l'outil, souvent une phrase) passe sous le nom de la rubrique, sur toute la largeur :
@@ -195,7 +194,7 @@ for sec in src.select('section'):
     elif sid == 'outil':
         t = sec.select_one('.tool')
         h = (f'<div{st("tool")}><p{st("toolH")}>{t.h3.get_text()}</p><p{st("verd")}><span{st("verdS")}>{t.select_one(".verdict").get_text()}</span></p>'
-             + ''.join(liste(p, 'why') if p.name == 'ul' else f'<p{st("why" if "why" in p.get("class", []) else "toolP")}>{inl(p)}</p>' for p in t.find_all(['p', 'ul'], recursive=False)) + '</div>')
+             + ''.join(liste(p, 'toolP') if p.name == 'ul' else f'<p{st("toolP")}>{inl(p)}</p>' for p in t.find_all(['p', 'ul'], recursive=False)) + '</div>')
     elif sid == 'archive':
         for i, c in enumerate(sec.select('.arch-card')):
             if i: h += f'<div{st("archGap")}>&nbsp;</div>'

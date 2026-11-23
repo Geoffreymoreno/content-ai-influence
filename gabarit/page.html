@@ -567,7 +567,9 @@
     .brief .lnk{font-size:14px;}
 
     .arch-card,.tool{padding:24px 20px;}
-    .tool .why{font-size:16px;line-height:1.75;color:#18191B;}
+    /* Toute la carte au format des paragraphes : « Pourquoi », « Ce qu'il reste à vérifier », la liste, « Pour en savoir plus » */
+    .tool .why,.tool ul.plain li{font-size:17.5px;line-height:1.75;color:#2C313C;}
+    .tool ul.plain li::before{top:.8em;}
 
     /* « .arch-card » en préfixe : sinon la règle « .arch-card p » l'emporte sur les étiquettes */
     .arch-card .lbl{font-size:14.5px;font-weight:770;letter-spacing:.151em;color:#D3884A;}
@@ -801,7 +803,8 @@
     .tool-top{flex-direction:column;justify-content:center;align-items:var(--d-outil-align, flex-start);--d-outil-align:center;}
     .tool h3{font-size:28px;text-align:center;}
     .tool > p:not(.why){font-size:22px;}
-    .tool .why{font-size:21px;line-height:1.75;color:#18191B;}
+    .tool .why,.tool ul.plain li{font-size:22px;line-height:1.75;color:#2C313C;}
+    .tool ul.plain li::before{top:.8em;}
 
     .arch-card{padding:34px 36px;}
     .arch-card h4{font-size:28px;text-align:center;}
