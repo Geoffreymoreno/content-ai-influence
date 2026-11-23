@@ -148,13 +148,14 @@ entete = (f'<tr><td{st("mast")}><h1{st("h1")}>{titre}</h1>'
 # Un repère court (« 94 % », « 5 sujets ») reste à droite, sur une ligne.
 # Un repère long (le titre de l'outil, souvent une phrase) passe sous le nom de la rubrique, sur toute la largeur :
 # à droite et sans retour à la ligne, il écrasait les noms des rubriques contre le bord gauche (numéros du 26/10 au 23/11/2026).
+# Le nom prend toute la place libre (width="100%") : la colonne de droite garde juste la largeur de son repère, et le nom ne passe à la ligne que si l'écran est trop étroit.
 REPERE_COURT = 18
 def ligne_prog(x):
     emo, nom, rep = x.select_one(".bandeau-emoji").get_text(), x.select_one(".bandeau-nom").get_text(), x.small.get_text().strip()
     if len(rep) <= REPERE_COURT:
-        return f'<tr><td width="28" valign="top"{st("progL")}>{emo}</td><td valign="top"{st("progL")}>{nom}</td><td valign="top"{st("progN")}>{rep}</td></tr>'
-    return (f'<tr><td width="28" valign="top"{st("progL2")}>{emo}</td><td colspan="2" valign="top"{st("progL2")}>{nom}</td></tr>'
-            f'<tr><td width="28"></td><td colspan="2" valign="top"{st("progS")}>{rep}</td></tr>')
+        return f'<tr><td width="28" valign="top"{st("progL")}><div style="width:28px;">{emo}</div></td><td width="100%" valign="top"{st("progL")}>{nom}</td><td valign="top"{st("progN")}>{rep}</td></tr>'
+    return (f'<tr><td width="28" valign="top"{st("progL2")}><div style="width:28px;">{emo}</div></td><td colspan="2" valign="top"{st("progL2")}>{nom}</td></tr>'
+            f'<tr><td width="28"><div style="width:28px;"></div></td><td colspan="2" valign="top"{st("progS")}>{rep}</td></tr>')
 prog = ''.join(ligne_prog(x) for x in src.select('.bandeau-liste a'))
 programme = f'<tr><td><div{st("prog")}><p{st("progT")}>Au programme · {len(src.select(".bandeau-liste a"))} rubriques</p>{T(prog)}</div></td></tr>'
 
